@@ -4,7 +4,7 @@ title: About
 ---
 
 <center>
-<img src="/images/benradford.png">
+<img src="/images/caesaryang.JPG">
 </center>
 
 <p>
@@ -18,7 +18,7 @@ title: About
 </p>
 
 <p>
-Benjamin J. Radford is a Principal Data Scientist with Sotera Defense Solutions. He received his Ph.D. in Political Science from Duke University where he studied security, peace, & conflict and political methodology. He specializes in data science, cybersecurity, political forecasting, and arms proliferation.
+Caesar F. Yang is a Graduate Student motivated by FinTech and data science. He received his Master of Science in Applied Finance from Pepperdine University where he studied accounting, finance, & statistics and financial modeling. He specializes in finance, data science, and investment.
 </p>
 
 <p>
