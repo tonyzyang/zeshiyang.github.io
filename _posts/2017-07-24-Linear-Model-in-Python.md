@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linear Model in Python
-subtitle: Using Multiple Linear Regression in Python to Predict Applicant's GPA
+subtitle: Using multiple linear regression in python to predict applicant's GPA
 author: Caesar F. Yang
 featured-image: /images/2017-07-24/header_students.jpg
 tags: [data analysis, python, statistics]
