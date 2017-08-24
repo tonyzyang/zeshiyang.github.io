@@ -131,6 +131,7 @@ df.to_csv('AAPL.csv')
 
 ```python
 #We can either read data from DataFrame or from a CSV file into a DataFrame:
+#You can see that the csv file is already in my wd folder
 df = pd.read_csv('AAPL.csv', parse_dates=True, index_col=0)
 ```
 
