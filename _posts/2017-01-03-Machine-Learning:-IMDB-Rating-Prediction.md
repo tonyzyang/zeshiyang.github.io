@@ -43,7 +43,14 @@ library(class)
 # Load data
 # select Data
 movie_metadata <- read_csv("//mac/Home/Desktop/movie_metadata.csv")
-movie <- dplyr::select(movie_metadata, title_year, budget, gross, duration, facenumber_in_poster, director_facebook_likes, imdb_score)
+movie <- dplyr::select(movie_metadata, 
+                       title_year, 
+                       budget, 
+                       gross, 
+                       duration, 
+                       facenumber_in_poster, 
+                       director_facebook_likes, 
+                       imdb_score)
 movie <- as.data.frame(movie)
 ```
 
