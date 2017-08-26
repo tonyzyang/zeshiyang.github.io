@@ -128,6 +128,7 @@ df.head()
 df.to_csv('AAPL.csv')
 ```
 
+![png](/images/2017-08-24/wd.png)
 
 ```python
 #We can either read data from DataFrame or from a CSV file into a DataFrame:
@@ -142,7 +143,7 @@ plt.show()
 ```
 
 
-![png](output_7_0.png)
+![png](/images/2017-08-24/output_7_0.png)
 
 
 
@@ -153,7 +154,7 @@ plt.show()
 ```
 
 
-![png](output_8_0.png)
+![png](/images/2017-08-24/output_8_0.png)
 
 
 
@@ -666,7 +667,7 @@ print(daily_pct_change.describe())
 ```
 
 
-![png](output_12_0.png)
+![png](/images/2017-08-24/output_12_0.png)
 
 
             Adj Close
@@ -766,5 +767,5 @@ plt.show()
 ```
 
 
-![png](output_14_0.png)
+![png](/images/2017-08-24/output_14_0.png)
 
