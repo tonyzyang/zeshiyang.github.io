@@ -3,7 +3,7 @@ layout: post
 title: Machine Learning: Movie Rating Prediction
 subtitle: Using Decision Tree method to predict movie rating based on IMDB dataset from kaggle. 
 author: Caesar F. Yang
-featured-image: 
+featured-image:/images/2017-01-03/header_movie.jpg 
 tags: [Machine Learning, R, Data Analysis]
 date-string: JANUARY 03, 2017
 ---
