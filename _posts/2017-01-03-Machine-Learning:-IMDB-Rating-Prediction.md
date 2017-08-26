@@ -5,7 +5,7 @@ subtitle: Using Decision Tree method to predict movie rating based on IMDB datas
 author: Caesar F. Yang
 featured-image: 
 tags: [Machine Learning, R, Data Analysis]
-date-string: AUGUST 01, 2017
+date-string: JANUARY 03, 2017
 ---
 
 If you like to improve the code on this blog, you can find the dataset at: 
