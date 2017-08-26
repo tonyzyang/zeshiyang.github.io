@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Machine Learning: Movie Rating Prediction
-subtitle: Using Decision Tree method to predict movie rating based on IMDB dataset from kaggle. 
+subtitle: Using Decision Tree method to predict movie rating based on IMDB dataset from kaggle
 author: Caesar F. Yang
-featured-image:/images/2017-01-03/header_movie.jpg 
-tags: [Machine Learning, R, Data Analysis]
+featured-image: /images/2017-01-03/header_movie.jpg
+tags: [machine learning, data analysis, r]
 date-string: JANUARY 03, 2017
 ---
+
 
 If you like to improve the code on this blog, you can find the dataset at: 
 [https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset](https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset).
