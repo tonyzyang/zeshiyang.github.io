@@ -287,5 +287,3 @@ plt.show()
 
 
 ![png](/images/2017-08-27/output_9_0.png)
-
-
