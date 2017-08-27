@@ -218,7 +218,7 @@ plt.show()
 ```
 
 
-![Correlation_matrix](https://github.com/Caesaryang/Caesaryang.github.io/blob/master/images/2017-07-24/output_2_0.png)
+![Correlation_matrix](/images/2017-07-24/output_2_0.png)
 
 
 
