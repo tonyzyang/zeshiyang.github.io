@@ -18,6 +18,6 @@ title: About
 </p>
 
 <p>
-Caesar F. Yang is a Graduate Student motivated by FinTech and data science. He received his Master of Science in Applied Finance from Pepperdine University where he studied accounting, finance, & statistics and financial modeling. He specializes in finance, data science, and investment.
+Caesar F. Yang is a graduate student motivated by FinTech and data science. He received his Master of Science in Applied Finance degree from Pepperdine University where he studied accounting, finance, & statistics and financial modeling. He specializes in finance, data science, and investment.
 </p>
 
