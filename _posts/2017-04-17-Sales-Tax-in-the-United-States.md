@@ -8,9 +8,6 @@ tags: [data analysis, data visualization, politics]
 date-string: April 17, 2017
 ---
 
-| Caesar F. Yang | Jiayi He | Zhaoyuan Huang | Shize Wu | Yechun Yang |
-| -------------- | :------- | :------------: | :------: |-----------: |
-
 Executive Summary
 ------------
 
