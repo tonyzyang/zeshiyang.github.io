@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Sales Tax in the United States?
+title: Sales Tax in the United States
 subtitle: A research into the state sales tax rates of the United States.
 author: Caesar F. Yang
 featured-image: /images/2017-04-17/header_tax.jpg
 tags: [data analysis, data visualization, politics]
 date-string: April 17, 2017
 ---
-![png](/images/2017-04-17/sales_tax.png)
+![png](/images/2017-04-17/states.png)
 
-![png](/images/2017-04-17/proportion.png)
+![png](/images/2017-04-17/reliance.png)
 
 ![png](/images/2017-04-17/history.png)
 
