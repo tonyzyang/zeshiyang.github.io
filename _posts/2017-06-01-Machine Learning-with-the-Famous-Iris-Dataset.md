@@ -8,7 +8,7 @@ tags: [machine learning, data analysis, python]
 date-string: JUNE 01, 2017
 ---
 
-![png]( /images/2016-06-01/03_iris.png)
+![png](/images/2017-06-01/03_iris.png)
 
 
 ```python
@@ -195,7 +195,7 @@ sns.pairplot(iris, hue="Species")
 
 
 
-![png]( /images/2016-06-01/output_3_1.png)
+![png](/images/2017-06-01/output_3_1.png)
 
 
 
@@ -212,7 +212,7 @@ sns.heatmap(iris.corr(), annot=True)
 
 
 
-![png]( /images/2016-06-01/output_4_1.png)
+![png](/images/2017-06-01/output_4_1.png)
 
 
 
@@ -310,6 +310,6 @@ plt.ylabel('Testing Accuracy')
 
 
 
-![png]( /images/2016-06-01/output_12_1.png)
+![png](/images/2017-06-01/output_12_1.png)
 
 
