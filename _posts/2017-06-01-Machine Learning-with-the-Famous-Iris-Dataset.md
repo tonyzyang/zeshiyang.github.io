@@ -3,7 +3,7 @@ layout: post
 title: Machine Learning with the Famous Iris Dataset
 subtitle: Simple KNN Classification with scikit-learn
 author: Caesar F. Yang
-featured-image:/images/2016-06-01/header_iris.jpg
+featured-image: /images/2017-06-01/header_iris.jpg
 tags: [machine learning, data analysis, python]
 date-string: JUNE 01, 2017
 ---
