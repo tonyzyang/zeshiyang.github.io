@@ -1,45 +1,279 @@
 ---
 layout: post
-title: Ordered Probit Regression with Integrated Variable Selection
-subtitle: 
-author: Benjamin J. Radford
-featured-image: /images/2015-06-18/bayesian_turtle.jpg
-tags: [statistics]
-date-string: June 18, 2015
+title: Simulating Beta Hedging in Python
+subtitle: Plotting and comparing the hedging strategy based on historical data
+author: Caesar F. Yang
+featured-image: /images/2017-08-28/header_hedge.jpg
+tags: [data visualization, python, finance]
+date-string: AUGUST 28, 2017
 ---
 
-Occasionally in political science, we run into problems in which we have a small dataset and a large array of possible of predictors. Choosing a parsimonious model can be difficult. When theory-based model selection is out of the question, automated variable selection allows us to estimate the probability that each predictor is included in the "true model." We can use these estimates to then prune our model. Here, I describe a Bayesian ordered probit regression model with stochastic search variable selection (SSVS).
 
-I developed this model (below) as part of a research project for a course on Bayesian and Modern Statistics at Duke. It is an ordered probit regression model and therefore assumes that the dependent variable is a vector of ordered categories. Given a prior exclusion probability, the model estimates the probability that each of several supplied independent variables are a part of the real data generating process. The prior exclusion probability places a weight on the size of the final model. An exclusion probability of 0.8 will result in a model in which approximately 80% of predictors are omitted. Variables are selected by forcing some beta values to precisely 0 with a spike and slab prior.
 
-R code to implement this model is available upon request. I will add it to this post when I find it.
+```python
+import datetime as dt
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import pandas as pd
+import pandas_datareader as pdr
+import statsmodels.formula.api as smf
+```
 
-<h3>Priors:</h3>
-$$ 
-\pi(\gamma) = \prod_{j=1}^{m-1} N(\gamma_j;\mu_0,\sigma_0^2) \\
-\pi(\beta) = \prod_{k=1}^p\delta_0(\beta_{0k})p_{0k} + (1-p_{0k})N(\beta_{0k};0,c_k^2) \\
-\pi(p_{0k}) \in [0,1]
-$$
 
-<h3>Likelihood function:</h3>
-$$ 
-L(Y|\beta,X,\gamma) = \prod_{i=1}^n N(z_i; x_i^T\beta,1) \sum_{j=1}^{m-1} I(y_i=j)I(\gamma_{j-1} < z_i < \gamma_j)
-$$
+```python
+#we're setting a start and end datetime object
+#this will be the range of dates that we're going to grab stock pricing information foR
+start = dt.datetime(2016, 1, 1)
+end = dt.datetime(2016, 12, 31)
+```
 
-<h3>Posterior distribution:</h3>
-$$ 
-\pi(\beta ,\gamma ,z|y) \propto \pi(\beta)\pi(\gamma)\pi(p_0)\prod_{i=1}^n N(z_i; X_i\beta,1) \sum_{j=1}^m I(Y_i=j)I(\gamma_{j-1} < z_i < \gamma_j)
-$$
 
-<h3>Full conditional posterior distributions:</h3>
-$$ 
-\pi(\beta_k | \beta_{-k}, z, \gamma, y, X) \propto \hat{p_{0k}}\delta_0(\beta_k) + (1-\hat{p_{0k}})N(\beta_k; E_k,V_k)\\
-E_k = V_kX^T(z-X_{-k}B_{-k})\\
-V_k = (c_k^2+x_k^Tx_k)^{-1}\\
-\hat{p_{0k}} = \frac{p_{0k}}{p_{0k}+(1-p_{0k})\frac{N(0;\beta_{0k},c_k^2)}{N(0;E_k,V_k)}}\\
-\pi(\gamma_j | \beta, z, y, X) \propto N(\gamma_j;\mu_0,\sigma_0^2)\\
-\pi(z_i | \beta, z_{-i}, \gamma, y, X) \propto N(z_i;X_i\beta,1)
-$$
+```python
+def get(tickers, startdate, enddate):
+  def data(ticker):
+    return (pdr.get_data_yahoo(ticker, start, end))
+  datas = map (data, tickers)
+  return(pd.concat(datas, keys=tickers, names=['Ticker', 'Date']))
+```
 
-<hr>
-<small>Header Image by John from U.S. of A. (Baby Turtle 023) [<a href="http://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>], via Wikimedia Commons.</small>
+
+```python
+tickers = ['AAPL','SPY']
+all_data = get(tickers, start, end)
+```
+
+
+```python
+# Isolate the `Adj Close` values and transform the DataFrame
+daily_close_px = all_data[['Adj Close']].reset_index().pivot('Date', 'Ticker', 'Adj Close')
+
+daily_close_px.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Ticker</th>
+      <th>AAPL</th>
+      <th>SPY</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-01-04</th>
+      <td>101.790649</td>
+      <td>194.990707</td>
+    </tr>
+    <tr>
+      <th>2016-01-05</th>
+      <td>99.239845</td>
+      <td>195.320511</td>
+    </tr>
+    <tr>
+      <th>2016-01-06</th>
+      <td>97.297760</td>
+      <td>192.856674</td>
+    </tr>
+    <tr>
+      <th>2016-01-07</th>
+      <td>93.191338</td>
+      <td>188.229752</td>
+    </tr>
+    <tr>
+      <th>2016-01-08</th>
+      <td>93.684120</td>
+      <td>186.163651</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# Calculate the daily percentage change for `daily_close_px`
+daily_pct_change = daily_close_px.pct_change()
+
+# Replace NA values with 0
+daily_pct_change.fillna(0, inplace=True)
+
+daily_pct_change.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Ticker</th>
+      <th>AAPL</th>
+      <th>SPY</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-01-04</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2016-01-05</th>
+      <td>-0.025059</td>
+      <td>0.001691</td>
+    </tr>
+    <tr>
+      <th>2016-01-06</th>
+      <td>-0.019570</td>
+      <td>-0.012614</td>
+    </tr>
+    <tr>
+      <th>2016-01-07</th>
+      <td>-0.042205</td>
+      <td>-0.023992</td>
+    </tr>
+    <tr>
+      <th>2016-01-08</th>
+      <td>0.005288</td>
+      <td>-0.010976</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+daily_pct_change.plot(figsize=(14,8))
+plt.ylabel("Daily Return")
+plt.legend()
+plt.show()
+```
+
+
+![png]( /images/2017-08-28/output_6_0.png)
+
+
+
+```python
+# Import the OLS model
+# Set SPY as my dependent variable, AAPL return as my independent variables
+# Print out my OLS model stats result
+results = smf.ols('AAPL ~ SPY', data=daily_pct_change).fit()
+print(results.summary())
+```
+
+                                OLS Regression Results                            
+    ==============================================================================
+    Dep. Variable:                   AAPL   R-squared:                       0.324
+    Model:                            OLS   Adj. R-squared:                  0.321
+    Method:                 Least Squares   F-statistic:                     119.9
+    Date:                Mon, 28 Aug 2017   Prob (F-statistic):           4.76e-23
+    Time:                        18:39:25   Log-Likelihood:                 755.67
+    No. Observations:                 252   AIC:                            -1507.
+    Df Residuals:                     250   BIC:                            -1500.
+    Df Model:                           1                                         
+    Covariance Type:            nonrobust                                         
+    ==============================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+    ------------------------------------------------------------------------------
+    Intercept   1.956e-05      0.001      0.026      0.980      -0.001       0.002
+    SPY            1.0236      0.093     10.949      0.000       0.839       1.208
+    ==============================================================================
+    Omnibus:                       49.445   Durbin-Watson:                   1.704
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              656.733
+    Skew:                          -0.100   Prob(JB):                    2.47e-143
+    Kurtosis:                      10.906   Cond. No.                         123.
+    ==============================================================================
+    
+    Warnings:
+    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+
+```python
+results.params
+```
+
+
+
+
+    Intercept    0.000020
+    SPY          1.023594
+    dtype: float64
+
+
+
+
+```python
+plt.figure(figsize=(14,8))
+plt.xlabel('SPY daily return')
+plt.ylabel('AAPL daily return')
+plt.title('Linear Model & Scatter Plot')
+plt.plot(daily_pct_change['SPY'], daily_pct_change['AAPL'], '.',
+         daily_pct_change['SPY'], results.predict(daily_pct_change['SPY']), '-')
+```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x11e554e80>,
+     <matplotlib.lines.Line2D at 0x11ebcdef0>]
+
+
+
+
+![png]( /images/2017-08-28/output_9_1.png)
+
+
+
+```python
+alpha = results.params[0]
+beta = results.params[1]
+```
+
+
+```python
+print ('alpha: ' + str(alpha))
+print ('beta: ' + str(beta))
+```
+
+    alpha: 1.95600722021e-05
+    beta: 1.0235943318
+
+
+
+```python
+# Construct a portfolio with beta hedging
+portfolio = -1*beta*daily_pct_change['SPY'] + daily_pct_change['AAPL']
+portfolio.name = "AAPL + Beta Hedge"
+
+daily_pct_change['AAPL'].plot(figsize=(14,8)) 
+daily_pct_change['SPY'].plot(figsize=(14,8))
+portfolio.plot(figsize=(14,8))
+plt.ylabel("Daily Return")
+plt.legend()
+plt.show()
+```
+
+
+![png]( /images/2017-08-28/output_12_0.png)
+
