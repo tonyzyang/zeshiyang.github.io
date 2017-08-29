@@ -8,8 +8,26 @@ tags: [machine learning, data analysis, python]
 date-string: JUNE 01, 2017
 ---
 
-![png](/images/2017-06-01/03_iris.png)
+# About the dataset
+If you like to improve the code on this blog, you can find the dataset at: 
+[https://www.kaggle.com/uciml/iris](https://www.kaggle.com/uciml/iris).
 
+
+# Question
+
+1. How can we generalize a model of the iris species? 
+2. Can we make prediction for an out-of-sample observation?
+3. How to evaluate the prediction accuracy of our model?
+4. What's the relationship between K (number of neighbors) and testing accuracy?
+
+# Variables in this dataset
+
+* SepalLengthCm
+* SepalWidthCm
+* PetalLengthCm
+* PetalWidthCm
+
+![png](/images/2017-06-01/03_iris.png)
 
 ```python
 import pandas as pd
