@@ -4,7 +4,7 @@ title: Why the U.S. Would Not Adopt a Value-Added Tax
 subtitle: A research into the state sales tax rates of the United States.
 author: Caesar F. Yang, Jiayi He, Zhaoyuan Huang, Shize Wu, Yechun Yang
 featured-image: /images/2017-04-17/header_tax.jpg
-tags: [data analysis, data visualization, politics]
+tags: [data analysis, data visualization, tableau, politics]
 date-string: April 17, 2017
 ---
 
