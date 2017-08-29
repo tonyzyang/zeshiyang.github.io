@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simulating Beta Hedging in Python
-subtitle: Plotting and comparing the hedging strategy based on historical data
+subtitle: Implementing and plotting the beta hedging strategy based on historical data
 author: Caesar F. Yang
 featured-image: /images/2017-08-28/header_hedge.jpg
 tags: [data visualization, python, finance]
