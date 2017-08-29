@@ -4,7 +4,7 @@ title: Getting Stock Price Data from Yahoo Finance
 subtitle: Some basic stock data processing and visualizations in python
 author: Caesar F. Yang
 featured-image: /images/2017-08-24/header_stock.jpg
-tags: [data visualization, python, finance]
+tags: [web scraping, data visualization, python, finance]
 date-string: August 24, 2017
 ---
 
