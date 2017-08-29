@@ -4,7 +4,7 @@ title: Stock Data Processing and visualizations (Multiple Stocks)
 subtitle: Multiple stocks data processing and visualizations in python
 author: Caesar F. Yang
 featured-image: /images/2017-08-27/header_multiple.jpg
-tags: [data visualization, python, finance]
+tags: [web scraping, data visualization, python, finance]
 date-string: August 27, 2017
 ---
 
