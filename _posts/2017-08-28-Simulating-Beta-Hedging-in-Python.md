@@ -10,45 +10,48 @@ date-string: AUGUST 28, 2017
 
 
 
+
 ```python
 import datetime as dt
-import numpy as np
-import matplotlib.pyplot as plt
-%matplotlib inline
-import pandas as pd
-import pandas_datareader as pdr
+import numpy as np 
+import pandas as pd 
+import pandas_datareader.data as web 
 import statsmodels.formula.api as smf
+import matplotlib.pyplot as plt 
+from matplotlib import style
+%matplotlib inline
+
+style.use('ggplot')
 ```
 
 
 ```python
-#we're setting a start and end datetime object
-#this will be the range of dates that we're going to grab stock pricing information foR
-start = dt.datetime(2016, 1, 1)
+def get_return(tickers, start, end):
+    data = web.DataReader(tickers, 'yahoo', start, end)['Adj Close']
+    data = data.sort_index()
+    data = np.round(data, decimals=2)
+    daily_return = data.pct_change()
+    daily_return.dropna(inplace=True)
+    return daily_return
+```
+
+
+```python
+start = dt.datetime(2016,1,1)
 end = dt.datetime(2016, 12, 31)
-```
 
-
-```python
-def get(tickers, startdate, enddate):
-  def data(ticker):
-    return (pdr.get_data_yahoo(ticker, start, end))
-  datas = map (data, tickers)
-  return(pd.concat(datas, keys=tickers, names=['Ticker', 'Date']))
-```
-
-
-```python
+#list of stocks in portfolio
 tickers = ['AAPL','SPY']
-all_data = get(tickers, start, end)
 ```
 
 
 ```python
-# Isolate the `Adj Close` values and transform the DataFrame
-daily_close_px = all_data[['Adj Close']].reset_index().pivot('Date', 'Ticker', 'Adj Close')
+daily_return = get_return(tickers, start, end)
+```
 
-daily_close_px.head()
+
+```python
+daily_return.head()
 ```
 
 
@@ -58,7 +61,7 @@ daily_close_px.head()
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Ticker</th>
+      <th></th>
       <th>AAPL</th>
       <th>SPY</th>
     </tr>
@@ -70,29 +73,29 @@ daily_close_px.head()
   </thead>
   <tbody>
     <tr>
-      <th>2016-01-04</th>
-      <td>101.790649</td>
-      <td>194.990707</td>
-    </tr>
-    <tr>
       <th>2016-01-05</th>
-      <td>99.239845</td>
-      <td>195.320511</td>
+      <td>-0.025052</td>
+      <td>0.001692</td>
     </tr>
     <tr>
       <th>2016-01-06</th>
-      <td>97.297760</td>
-      <td>192.856674</td>
+      <td>-0.019549</td>
+      <td>-0.012595</td>
     </tr>
     <tr>
       <th>2016-01-07</th>
-      <td>93.191338</td>
-      <td>188.229752</td>
+      <td>-0.042240</td>
+      <td>-0.024007</td>
     </tr>
     <tr>
       <th>2016-01-08</th>
-      <td>93.684120</td>
-      <td>186.163651</td>
+      <td>0.005258</td>
+      <td>-0.010997</td>
+    </tr>
+    <tr>
+      <th>2016-01-11</th>
+      <td>0.016225</td>
+      <td>0.001021</td>
     </tr>
   </tbody>
 </table>
@@ -102,74 +105,14 @@ daily_close_px.head()
 
 
 ```python
-# Calculate the daily percentage change for `daily_close_px`
-daily_pct_change = daily_close_px.pct_change()
-
-# Replace NA values with 0
-daily_pct_change.fillna(0, inplace=True)
-
-daily_pct_change.head()
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Ticker</th>
-      <th>AAPL</th>
-      <th>SPY</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016-01-04</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>2016-01-05</th>
-      <td>-0.025059</td>
-      <td>0.001691</td>
-    </tr>
-    <tr>
-      <th>2016-01-06</th>
-      <td>-0.019570</td>
-      <td>-0.012614</td>
-    </tr>
-    <tr>
-      <th>2016-01-07</th>
-      <td>-0.042205</td>
-      <td>-0.023992</td>
-    </tr>
-    <tr>
-      <th>2016-01-08</th>
-      <td>0.005288</td>
-      <td>-0.010976</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-daily_pct_change.plot(figsize=(14,8))
+daily_return.plot(figsize=(14,8))
 plt.ylabel("Daily Return")
 plt.legend()
 plt.show()
 ```
 
 
-![png]( /images/2017-08-28/output_6_0.png)
+![png](/images/2017-08-28/output_5_0.png)
 
 
 
@@ -177,35 +120,57 @@ plt.show()
 # Import the OLS model
 # Set SPY as my dependent variable, AAPL return as my independent variables
 # Print out my OLS model stats result
-results = smf.ols('AAPL ~ SPY', data=daily_pct_change).fit()
+results = smf.ols('AAPL ~ SPY', data=daily_return).fit()
 print(results.summary())
 ```
 
                                 OLS Regression Results                            
     ==============================================================================
     Dep. Variable:                   AAPL   R-squared:                       0.324
-    Model:                            OLS   Adj. R-squared:                  0.321
-    Method:                 Least Squares   F-statistic:                     119.9
-    Date:                Mon, 28 Aug 2017   Prob (F-statistic):           4.76e-23
-    Time:                        18:39:25   Log-Likelihood:                 755.67
-    No. Observations:                 252   AIC:                            -1507.
-    Df Residuals:                     250   BIC:                            -1500.
+    Model:                            OLS   Adj. R-squared:                  0.322
+    Method:                 Least Squares   F-statistic:                     119.5
+    Date:                Fri, 01 Sep 2017   Prob (F-statistic):           5.67e-23
+    Time:                        13:24:47   Log-Likelihood:                 752.24
+    No. Observations:                 251   AIC:                            -1500.
+    Df Residuals:                     249   BIC:                            -1493.
     Df Model:                           1                                         
     Covariance Type:            nonrobust                                         
     ==============================================================================
                      coef    std err          t      P>|t|      [0.025      0.975]
     ------------------------------------------------------------------------------
-    Intercept   1.956e-05      0.001      0.026      0.980      -0.001       0.002
-    SPY            1.0236      0.093     10.949      0.000       0.839       1.208
+    Intercept   1.967e-05      0.001      0.026      0.980      -0.001       0.002
+    SPY            1.0238      0.094     10.930      0.000       0.839       1.208
     ==============================================================================
-    Omnibus:                       49.445   Durbin-Watson:                   1.704
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              656.733
-    Skew:                          -0.100   Prob(JB):                    2.47e-143
-    Kurtosis:                      10.906   Cond. No.                         123.
+    Omnibus:                       49.134   Durbin-Watson:                   1.684
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):              647.494
+    Skew:                          -0.100   Prob(JB):                    2.50e-141
+    Kurtosis:                      10.866   Cond. No.                         122.
     ==============================================================================
     
     Warnings:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+
+```python
+plt.figure(figsize=(14,8))
+plt.xlabel('SPY daily return')
+plt.ylabel('AAPL daily return')
+plt.title('Linear Model & Scatter Plot')
+plt.plot(daily_return['SPY'], daily_return['AAPL'], '.',
+         daily_return['SPY'], results.predict(daily_return['SPY']), '-')
+```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x11d941b70>,
+     <matplotlib.lines.Line2D at 0x11d941d30>]
+
+
+
+
+![png](/images/2017-08-28/output_7_1.png)
 
 
 
@@ -217,57 +182,32 @@ results.params
 
 
     Intercept    0.000020
-    SPY          1.023594
+    SPY          1.023777
     dtype: float64
 
 
 
 
 ```python
-plt.figure(figsize=(14,8))
-plt.xlabel('SPY daily return')
-plt.ylabel('AAPL daily return')
-plt.title('Linear Model & Scatter Plot')
-plt.plot(daily_pct_change['SPY'], daily_pct_change['AAPL'], '.',
-         daily_pct_change['SPY'], results.predict(daily_pct_change['SPY']), '-')
-```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x11e554e80>,
-     <matplotlib.lines.Line2D at 0x11ebcdef0>]
-
-
-
-
-![png]( /images/2017-08-28/output_9_1.png)
-
-
-
-```python
 alpha = results.params[0]
 beta = results.params[1]
-```
 
-
-```python
 print ('alpha: ' + str(alpha))
 print ('beta: ' + str(beta))
 ```
 
-    alpha: 1.95600722021e-05
-    beta: 1.0235943318
+    alpha: 1.96704048212e-05
+    beta: 1.02377727949
 
 
 
 ```python
 # Construct a portfolio with beta hedging
-portfolio = -1*beta*daily_pct_change['SPY'] + daily_pct_change['AAPL']
+portfolio = -1*beta*daily_return['SPY'] + daily_return['AAPL']
 portfolio.name = "AAPL + Beta Hedge"
 
-daily_pct_change['AAPL'].plot(figsize=(14,8)) 
-daily_pct_change['SPY'].plot(figsize=(14,8))
+daily_return['AAPL'].plot(figsize=(14,8)) 
+daily_return['SPY'].plot(figsize=(14,8))
 portfolio.plot(figsize=(14,8))
 plt.ylabel("Daily Return")
 plt.legend()
@@ -275,5 +215,148 @@ plt.show()
 ```
 
 
-![png]( /images/2017-08-28/output_12_0.png)
+![png](/images/2017-08-28/output_10_0.png)
+
+
+
+```python
+daily_return['AAPL + Beta Hedge'] = portfolio
+```
+
+
+```python
+daily_return.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AAPL</th>
+      <th>SPY</th>
+      <th>AAPL + Beta Hedge</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-01-05</th>
+      <td>-0.025052</td>
+      <td>0.001692</td>
+      <td>-0.026784</td>
+    </tr>
+    <tr>
+      <th>2016-01-06</th>
+      <td>-0.019549</td>
+      <td>-0.012595</td>
+      <td>-0.006654</td>
+    </tr>
+    <tr>
+      <th>2016-01-07</th>
+      <td>-0.042240</td>
+      <td>-0.024007</td>
+      <td>-0.017663</td>
+    </tr>
+    <tr>
+      <th>2016-01-08</th>
+      <td>0.005258</td>
+      <td>-0.010997</td>
+      <td>0.016517</td>
+    </tr>
+    <tr>
+      <th>2016-01-11</th>
+      <td>0.016225</td>
+      <td>0.001021</td>
+      <td>0.015181</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+cum_daily_return = (1 + daily_return).cumprod()
+cum_daily_return.tail()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AAPL</th>
+      <th>SPY</th>
+      <th>AAPL + Beta Hedge</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-12-23</th>
+      <td>1.130661</td>
+      <td>1.146931</td>
+      <td>0.982820</td>
+    </tr>
+    <tr>
+      <th>2016-12-27</th>
+      <td>1.137833</td>
+      <td>1.149803</td>
+      <td>0.986535</td>
+    </tr>
+    <tr>
+      <th>2016-12-28</th>
+      <td>1.133019</td>
+      <td>1.140264</td>
+      <td>0.990740</td>
+    </tr>
+    <tr>
+      <th>2016-12-29</th>
+      <td>1.132724</td>
+      <td>1.140007</td>
+      <td>0.990710</td>
+    </tr>
+    <tr>
+      <th>2016-12-30</th>
+      <td>1.123883</td>
+      <td>1.135853</td>
+      <td>0.986673</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+cum_daily_return.plot(grid = True, figsize=(14,10)).axhline(y = 1, color = "black", lw = 1)
+plt.ylabel("Cumulative Returns")
+plt.legend()
+plt.show()
+```
+
+
+![png](/images/2017-08-28/output_14_0.png)
+
+
+
 
