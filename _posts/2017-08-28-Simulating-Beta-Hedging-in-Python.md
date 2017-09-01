@@ -189,6 +189,9 @@ results.params
 
 
 ```python
+#In this case, I assume the risk free rate is 0, so the pure alpha is just the intercept 
+#According to CAPM model, alpha = realized return - [beta(rm-rf)+rf] 
+#Numbers would be different if the assumption of risk free rate changed
 alpha = results.params[0]
 beta = results.params[1]
 
