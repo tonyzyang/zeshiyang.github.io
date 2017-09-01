@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Backtesting a Portfolio
-subtitle: Given the stocks, weights and time period, if my stratefy worked in the past?
+subtitle: Given the stocks, weights and time period, if my strategy worked in the past?
 author: Caesar F. Yang
 featured-image: /images/2017-09-01/header_portfolio.jpg
 tags: [web scraping, data visualization, python, finance]
