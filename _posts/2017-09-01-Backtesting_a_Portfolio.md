@@ -1,4 +1,12 @@
-
+---
+layout: post
+title: Backtesting a Portfolio
+subtitle: Given the stocks, weights and time period, if my stratefy worked in the past?
+author: Caesar F. Yang
+featured-image: /images/2017-09-01/header_portfolio.jpg
+tags: [web scraping, data visualization, python, finance]
+date-string: SEPTEMBER 01, 2017
+---
 
 ```python
 import datetime as dt
@@ -221,7 +229,7 @@ plt.show()
 
 
 
-![png](output_6_1.png)
+![png](/images/2017-09-01/output_6_1.png)
 
 
 
@@ -233,5 +241,5 @@ plt.show()
 ```
 
 
-![png](output_7_0.png)
+![png](/images/2017-09-01/output_7_0.png)
 
