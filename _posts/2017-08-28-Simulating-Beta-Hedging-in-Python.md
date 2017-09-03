@@ -121,7 +121,7 @@ plt.show()
 
 ```python
 # Import the OLS model
-# Set SPY as my dependent variable, AAPL return as my independent variables
+# Set SPY as my dependent variable, AMZN return as my independent variables
 # Print out my OLS model stats result
 results = smf.ols('AMZN ~ SPY', data=daily_return).fit()
 print(results.summary())
@@ -202,10 +202,12 @@ print ('beta: ' + str(beta))
     alpha: 0.00010619636426
     beta: 1.07062267236
 
+## Construct a portfolio with beta hedging
+1. Alpha  = actual return - [Beta(rm - rf) + rf]
+2. In this case I assume risk free rate is 0, so the Alpha is just the intercept in the Linear Model
+3. Beta is the hedge ratio, so I simply added a hedge into the AMZN return, then get the pure alpha 
 
-
-```python
-# Construct a portfolio with beta hedging
+```python 
 portfolio = -1*beta*daily_return['SPY'] + daily_return['AMZN']
 portfolio.name = "AMZN + Beta Hedge"
 
