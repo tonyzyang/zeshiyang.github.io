@@ -22,12 +22,17 @@ style.use('ggplot')
 
 
 ```python
-def get_return(tickers, start, end):
+def get_return(tickers, start, end, log_return=True):
     data = web.DataReader(tickers, 'yahoo', start, end)['Adj Close']
     data = data.sort_index()
-    data = np.round(data, decimals=2)
-    daily_return = data.pct_change()
-    daily_return.dropna(inplace=True)
+    
+    if log_return:
+        daily_return = np.log(data.pct_change()+1)
+    else:
+        daily_return = data.pct_change()
+    
+    daily_return.fillna(0, inplace=True)
+
     return daily_return
 ```
 
@@ -45,13 +50,13 @@ weight = np.array([[0.25, 0.25, 0.25, 0.25]])
 
 
 ```python
-daily_return = get_return(tickers, start, end)
+daily_return = get_return(tickers, start, end, log_return=True)
 ```
 
 
 ```python
 daily_return['Portfolio'] = daily_return.dot(weight.T)
-daily_return['SPY'] = get_return('SPY', start, end)
+daily_return['SPY'] = get_return('SPY', start, end, log_return=True)
 daily_return.head()
 ```
 
@@ -82,49 +87,49 @@ daily_return.head()
   </thead>
   <tbody>
     <tr>
+      <th>2016-01-04</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
       <th>2016-01-05</th>
-      <td>-0.025052</td>
-      <td>0.025297</td>
-      <td>0.004989</td>
-      <td>0.013956</td>
-      <td>0.004798</td>
-      <td>0.001692</td>
+      <td>-0.025379</td>
+      <td>0.024982</td>
+      <td>0.004977</td>
+      <td>0.013882</td>
+      <td>0.004616</td>
+      <td>0.001690</td>
     </tr>
     <tr>
       <th>2016-01-06</th>
-      <td>-0.019549</td>
-      <td>-0.016533</td>
-      <td>0.002336</td>
-      <td>-0.014255</td>
-      <td>-0.012000</td>
-      <td>-0.012595</td>
+      <td>-0.019764</td>
+      <td>-0.016671</td>
+      <td>0.002333</td>
+      <td>-0.014370</td>
+      <td>-0.012118</td>
+      <td>-0.012695</td>
     </tr>
     <tr>
       <th>2016-01-07</th>
-      <td>-0.042240</td>
-      <td>-0.059615</td>
-      <td>-0.049043</td>
-      <td>-0.026596</td>
-      <td>-0.044374</td>
-      <td>-0.024007</td>
+      <td>-0.043121</td>
+      <td>-0.061466</td>
+      <td>-0.050287</td>
+      <td>-0.027033</td>
+      <td>-0.045477</td>
+      <td>-0.024284</td>
     </tr>
     <tr>
       <th>2016-01-08</th>
-      <td>0.005258</td>
-      <td>-0.026403</td>
-      <td>-0.006025</td>
-      <td>-0.016393</td>
-      <td>-0.010891</td>
-      <td>-0.010997</td>
-    </tr>
-    <tr>
-      <th>2016-01-11</th>
-      <td>0.016225</td>
-      <td>-0.012429</td>
-      <td>0.001849</td>
-      <td>0.011458</td>
-      <td>0.004276</td>
-      <td>0.001021</td>
+      <td>0.005274</td>
+      <td>-0.026757</td>
+      <td>-0.006044</td>
+      <td>-0.016510</td>
+      <td>-0.011009</td>
+      <td>-0.011037</td>
     </tr>
   </tbody>
 </table>
@@ -166,48 +171,48 @@ cum_daily_return.tail()
   <tbody>
     <tr>
       <th>2016-12-23</th>
-      <td>1.130661</td>
-      <td>1.131699</td>
-      <td>1.147231</td>
-      <td>0.853962</td>
-      <td>1.076797</td>
-      <td>1.146931</td>
+      <td>1.100237</td>
+      <td>1.080395</td>
+      <td>1.105162</td>
+      <td>0.832765</td>
+      <td>1.040483</td>
+      <td>1.137326</td>
     </tr>
     <tr>
       <th>2016-12-27</th>
-      <td>1.137833</td>
-      <td>1.141479</td>
-      <td>1.154471</td>
-      <td>0.843662</td>
-      <td>1.079283</td>
-      <td>1.149803</td>
+      <td>1.107203</td>
+      <td>1.089691</td>
+      <td>1.112114</td>
+      <td>0.822759</td>
+      <td>1.042879</td>
+      <td>1.140144</td>
     </tr>
     <tr>
       <th>2016-12-28</th>
-      <td>1.133019</td>
-      <td>1.139262</td>
-      <td>1.143807</td>
-      <td>0.839342</td>
-      <td>1.073744</td>
-      <td>1.140264</td>
+      <td>1.102471</td>
+      <td>1.087573</td>
+      <td>1.101794</td>
+      <td>0.818416</td>
+      <td>1.037462</td>
+      <td>1.130682</td>
     </tr>
     <tr>
       <th>2016-12-29</th>
-      <td>1.132724</td>
-      <td>1.138740</td>
-      <td>1.138231</td>
-      <td>0.839841</td>
-      <td>1.072402</td>
-      <td>1.140007</td>
+      <td>1.102188</td>
+      <td>1.087075</td>
+      <td>1.096410</td>
+      <td>0.819058</td>
+      <td>1.036212</td>
+      <td>1.130430</td>
     </tr>
     <tr>
       <th>2016-12-30</th>
-      <td>1.123883</td>
-      <td>1.144999</td>
-      <td>1.125514</td>
-      <td>0.836185</td>
-      <td>1.067620</td>
-      <td>1.135853</td>
+      <td>1.093562</td>
+      <td>1.093033</td>
+      <td>1.084090</td>
+      <td>0.815360</td>
+      <td>1.031525</td>
+      <td>1.126291</td>
     </tr>
   </tbody>
 </table>
@@ -225,11 +230,11 @@ plt.show()
 ```
 
 
-    <matplotlib.figure.Figure at 0x11d448e10>
+    <matplotlib.figure.Figure at 0x116e9cf28>
 
 
 
-![png](/images/2017-09-01/output_6_1.png)
+![png](/images/2017-09-01/output_6_2.png)
 
 
 
@@ -241,5 +246,7 @@ plt.show()
 ```
 
 
-![png](/images/2017-09-01/output_7_0.png)
+![png](/images/2017-09-01/output_7_2.png)
+
+
 
