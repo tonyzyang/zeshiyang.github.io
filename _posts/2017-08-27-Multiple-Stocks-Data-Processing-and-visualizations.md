@@ -11,49 +11,39 @@ date-string: August 27, 2017
 
 ```python
 import datetime as dt
-import numpy as np
-import matplotlib.pyplot as plt
+import numpy as np 
+import pandas as pd 
+import pandas_datareader.data as web 
+import seaborn as sns
+import matplotlib.pyplot as plt 
 from matplotlib import style
-import pandas as pd
-import pandas_datareader.data as web
-import pandas_datareader as pdr
+%matplotlib inline
+
+style.use('fivethirtyeight')
 ```
 
 
 ```python
-#we're setting a visulization style
-style.use('ggplot')
+def get_price(tickers, start, end):
+    data = web.DataReader(tickers, 'yahoo', start, end)['Adj Close']
+    daily_price = data.sort_index()
+
+    return daily_price
 ```
 
 
 ```python
-#we're setting a start and end datetime object
-#this will be the range of dates that we're going to grab stock pricing information foR
-start = dt.datetime(2016, 1, 1)
+start = dt.datetime(2016,1,1)
 end = dt.datetime(2016, 12, 31)
+
+#list of stocks in portfolio
+tickers = ['AAPL', 'BRK-B', 'BTI', 'COP', 'GS', 'LUV', 'NKE', 'PFE', 'TSLA']
 ```
 
 
 ```python
-def get(tickers, startdate, enddate):
-  def data(ticker):
-    return (pdr.get_data_yahoo(ticker, start, end))
-  datas = map (data, tickers)
-  return(pd.concat(datas, keys=tickers, names=['Ticker', 'Date']))
-```
-
-
-```python
-tickers = ['AAPL', 'TSLA', 'BABA', 'GOOG']
-all_data = get(tickers, start, end)
-```
-
-
-```python
-# Isolate the `Adj Close` values and transform the DataFrame
-daily_close_px = all_data[['Adj Close']].reset_index().pivot('Date', 'Ticker', 'Adj Close')
-
-daily_close_px.head()
+daily_price = get_price(tickers, start, end)
+daily_price.head()
 ```
 
 
@@ -63,14 +53,24 @@ daily_close_px.head()
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Ticker</th>
+      <th></th>
       <th>AAPL</th>
-      <th>BABA</th>
-      <th>GOOG</th>
+      <th>BRK-B</th>
+      <th>BTI</th>
+      <th>COP</th>
+      <th>GS</th>
+      <th>LUV</th>
+      <th>NKE</th>
+      <th>PFE</th>
       <th>TSLA</th>
     </tr>
     <tr>
       <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -81,36 +81,61 @@ daily_close_px.head()
     <tr>
       <th>2016-01-04</th>
       <td>101.790649</td>
-      <td>76.690002</td>
-      <td>741.840027</td>
+      <td>130.750000</td>
+      <td>50.554924</td>
+      <td>44.941711</td>
+      <td>172.800156</td>
+      <td>41.327766</td>
+      <td>60.192345</td>
+      <td>29.891121</td>
       <td>223.410004</td>
     </tr>
     <tr>
       <th>2016-01-05</th>
       <td>99.239845</td>
-      <td>78.629997</td>
-      <td>742.580017</td>
+      <td>131.250000</td>
+      <td>50.662033</td>
+      <td>45.440212</td>
+      <td>169.824875</td>
+      <td>41.820232</td>
+      <td>61.033783</td>
+      <td>30.106300</td>
       <td>223.429993</td>
     </tr>
     <tr>
       <th>2016-01-06</th>
       <td>97.297760</td>
-      <td>77.330002</td>
-      <td>743.619995</td>
+      <td>131.330002</td>
+      <td>50.559578</td>
+      <td>43.474976</td>
+      <td>165.678986</td>
+      <td>42.204353</td>
+      <td>60.162991</td>
+      <td>29.573030</td>
       <td>219.039993</td>
     </tr>
     <tr>
       <th>2016-01-07</th>
       <td>93.191338</td>
-      <td>72.720001</td>
-      <td>726.390015</td>
+      <td>129.479996</td>
+      <td>49.418652</td>
+      <td>42.238308</td>
+      <td>160.586899</td>
+      <td>41.317917</td>
+      <td>58.558380</td>
+      <td>29.376560</td>
       <td>215.649994</td>
     </tr>
     <tr>
       <th>2016-01-08</th>
       <td>93.684120</td>
-      <td>70.800003</td>
-      <td>714.469971</td>
+      <td>128.330002</td>
+      <td>48.743401</td>
+      <td>41.500145</td>
+      <td>159.923523</td>
+      <td>41.574001</td>
+      <td>57.599533</td>
+      <td>29.002338</td>
       <td>211.000000</td>
     </tr>
   </tbody>
@@ -121,26 +146,14 @@ daily_close_px.head()
 
 
 ```python
-# Calculate the daily percentage change for `daily_close_px`
-daily_pct_change = daily_close_px.pct_change()
+# Calculate the daily log return for `daily_price`
+daily_return = np.log(daily_price.pct_change()+1)
 
 # Replace NA values with 0
-daily_pct_change.fillna(0, inplace=True)
+daily_return.fillna(0, inplace=True)
 
-# Plot the distributions
-daily_pct_change.hist(bins=50, sharex=True, figsize=(12,8))
-
-# Show the resulting plot
-plt.show()
-```
-
-
-![png](/images/2017-08-27/output_6_0.png)
-
-
-
-```python
-daily_pct_change.head()
+# View the first 5 rows
+daily_return.head()
 ```
 
 
@@ -150,14 +163,24 @@ daily_pct_change.head()
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Ticker</th>
+      <th></th>
       <th>AAPL</th>
-      <th>BABA</th>
-      <th>GOOG</th>
+      <th>BRK-B</th>
+      <th>BTI</th>
+      <th>COP</th>
+      <th>GS</th>
+      <th>LUV</th>
+      <th>NKE</th>
+      <th>PFE</th>
       <th>TSLA</th>
     </tr>
     <tr>
       <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -171,34 +194,59 @@ daily_pct_change.head()
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>2016-01-05</th>
-      <td>-0.025059</td>
-      <td>0.025297</td>
-      <td>0.000998</td>
+      <td>-0.025379</td>
+      <td>0.003817</td>
+      <td>0.002116</td>
+      <td>0.011031</td>
+      <td>-0.017368</td>
+      <td>0.011846</td>
+      <td>0.013882</td>
+      <td>0.007173</td>
       <td>0.000089</td>
     </tr>
     <tr>
       <th>2016-01-06</th>
-      <td>-0.019570</td>
-      <td>-0.016533</td>
-      <td>0.001400</td>
-      <td>-0.019648</td>
+      <td>-0.019764</td>
+      <td>0.000609</td>
+      <td>-0.002024</td>
+      <td>-0.044212</td>
+      <td>-0.024716</td>
+      <td>0.009143</td>
+      <td>-0.014370</td>
+      <td>-0.017872</td>
+      <td>-0.019844</td>
     </tr>
     <tr>
       <th>2016-01-07</th>
-      <td>-0.042205</td>
-      <td>-0.059615</td>
-      <td>-0.023170</td>
-      <td>-0.015477</td>
+      <td>-0.043121</td>
+      <td>-0.014187</td>
+      <td>-0.022824</td>
+      <td>-0.028858</td>
+      <td>-0.031217</td>
+      <td>-0.021227</td>
+      <td>-0.027033</td>
+      <td>-0.006666</td>
+      <td>-0.015598</td>
     </tr>
     <tr>
       <th>2016-01-08</th>
-      <td>0.005288</td>
-      <td>-0.026403</td>
-      <td>-0.016410</td>
-      <td>-0.021563</td>
+      <td>0.005274</td>
+      <td>-0.008921</td>
+      <td>-0.013758</td>
+      <td>-0.017631</td>
+      <td>-0.004140</td>
+      <td>0.006179</td>
+      <td>-0.016510</td>
+      <td>-0.012821</td>
+      <td>-0.021799</td>
     </tr>
   </tbody>
 </table>
@@ -208,9 +256,44 @@ daily_pct_change.head()
 
 
 ```python
-# Calculate the cumulative daily returns
-cum_daily_return = (1 + daily_pct_change).cumprod()
-cum_daily_return.head()
+# Plot the frequency distributions
+daily_return.hist(bins=40, sharex=True, figsize=(12,8), facecolor='r', alpha=0.75)
+plt.show()
+```
+
+
+![png](/images/2017-08-27/output_5_0.png)
+
+
+
+```python
+# calculate the correlation matrix
+corr = daily_return.corr()
+
+# plot the heatmap
+fig, ax = plt.subplots(figsize=(10,10))
+sns.heatmap(corr, 
+            xticklabels=corr.columns, 
+            yticklabels=corr.columns, 
+            annot=True, 
+            linewidths=.5)
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x11f3fda90>
+
+
+
+
+![png](/images/2017-08-27/output_6_1.png)
+
+
+
+```python
+cum_daily_return = (1 + daily_return).cumprod()
+cum_daily_return.tail()
 ```
 
 
@@ -220,10 +303,15 @@ cum_daily_return.head()
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Ticker</th>
+      <th></th>
       <th>AAPL</th>
-      <th>BABA</th>
-      <th>GOOG</th>
+      <th>BRK-B</th>
+      <th>BTI</th>
+      <th>COP</th>
+      <th>GS</th>
+      <th>LUV</th>
+      <th>NKE</th>
+      <th>PFE</th>
       <th>TSLA</th>
     </tr>
     <tr>
@@ -232,43 +320,73 @@ cum_daily_return.head()
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2016-01-04</th>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
+      <th>2016-12-23</th>
+      <td>1.100237</td>
+      <td>1.250541</td>
+      <td>1.049368</td>
+      <td>1.025744</td>
+      <td>1.332540</td>
+      <td>1.155339</td>
+      <td>0.832765</td>
+      <td>1.037307</td>
+      <td>0.887124</td>
     </tr>
     <tr>
-      <th>2016-01-05</th>
-      <td>0.974941</td>
-      <td>1.025297</td>
-      <td>1.000998</td>
-      <td>1.000089</td>
+      <th>2016-12-27</th>
+      <td>1.107203</td>
+      <td>1.247739</td>
+      <td>1.053289</td>
+      <td>1.030327</td>
+      <td>1.335799</td>
+      <td>1.156255</td>
+      <td>0.822759</td>
+      <td>1.038903</td>
+      <td>0.912497</td>
     </tr>
     <tr>
-      <th>2016-01-06</th>
-      <td>0.955861</td>
-      <td>1.008345</td>
-      <td>1.002399</td>
-      <td>0.980440</td>
+      <th>2016-12-28</th>
+      <td>1.102471</td>
+      <td>1.238628</td>
+      <td>1.041533</td>
+      <td>1.013619</td>
+      <td>1.330757</td>
+      <td>1.148903</td>
+      <td>0.818416</td>
+      <td>1.033138</td>
+      <td>0.913370</td>
     </tr>
     <tr>
-      <th>2016-01-07</th>
-      <td>0.915520</td>
-      <td>0.948233</td>
-      <td>0.979173</td>
-      <td>0.965266</td>
+      <th>2016-12-29</th>
+      <td>1.102188</td>
+      <td>1.233322</td>
+      <td>1.050843</td>
+      <td>1.009016</td>
+      <td>1.317028</td>
+      <td>1.149590</td>
+      <td>0.819058</td>
+      <td>1.037599</td>
+      <td>0.892091</td>
     </tr>
     <tr>
-      <th>2016-01-08</th>
-      <td>0.920361</td>
-      <td>0.923197</td>
-      <td>0.963105</td>
-      <td>0.944452</td>
+      <th>2016-12-30</th>
+      <td>1.093562</td>
+      <td>1.232792</td>
+      <td>1.053645</td>
+      <td>1.000999</td>
+      <td>1.324031</td>
+      <td>1.141316</td>
+      <td>0.815360</td>
+      <td>1.037280</td>
+      <td>0.887968</td>
     </tr>
   </tbody>
 </table>
@@ -278,12 +396,19 @@ cum_daily_return.head()
 
 
 ```python
-# Plot the cumulative daily returns
-cum_daily_return.plot(figsize=(12,8))
-
-# Show the plot
+plt.figure()
+cum_daily_return.plot(grid = True, figsize=(14,10)).axhline(y = 1, color = "black", lw = 1)
+plt.ylabel("Cumulative Returns")
+plt.legend()
 plt.show()
 ```
 
 
-![png](/images/2017-08-27/output_9_0.png)
+    <matplotlib.figure.Figure at 0x11f712cc0>
+
+
+
+![png](/images/2017-08-27/output_8_1.png)
+
+
+
