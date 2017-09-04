@@ -428,7 +428,6 @@ plt.show()
 
 
 
-![png](/images/2017-09-01/output_7_2.png)
 
 
 
