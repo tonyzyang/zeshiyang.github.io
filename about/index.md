@@ -17,5 +17,5 @@ title: About
 </center>
 </p>
 <p>
-Tony Zeshi Yang is a graduate student who has motivation in risk modeling and investments field. He received his Master of Science in Applied Finance degree from Pepperdine University, from which he studied accounting, finance, & statistics and financial modeling.
+Tony Zeshi Yang is a graduate student who has motivation in risk modeling and investments industries. He received his Master of Science in Applied Finance degree from Pepperdine University, from which he studied accounting, finance, & statistics and financial modeling.
 </p>
