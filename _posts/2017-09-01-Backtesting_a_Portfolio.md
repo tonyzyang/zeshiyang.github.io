@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Backtesting a Portfolio with Modern Portfolio Theory
-subtitle: The Efficient Frontier of Markowitz portfolio in Python
+subtitle: The Efficient Frontier of Markowitz Portfolio in Python
 author: Caesar F. Yang
 featured-image: /images/2017-09-01/header_portfolio.jpg
 tags: [web scraping, data visualization, python, finance]
@@ -346,7 +346,7 @@ rm = annualized_return['SPY']
 rf = 0.00 # you can change this number
 
 beta = results.params[1]
-alpha = ra - beta*(rm - rf)
+alpha = ra - beta*(rm - rf)+rf 
 
 sharpe_ratio = (ra-rf)/annualized_stdev['Portfolio']
 ```
