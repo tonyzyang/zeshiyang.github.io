@@ -4,20 +4,20 @@ title: About
 ---
 
 <center>
-<img src="/images/header_caesaryang.jpg">
+<img src="/images/header_zeshiyang.jpg">
 </center>
 
 <p>
 <center>
     <ul class="navigation-bar">
-       <li><a href="https://github.com/Caesaryang"><i class='fa fa-github-alt'></i></a></li>  
-       <li><a href="https://twitter.com/CaesarYang"><i class="fa fa-twitter"></i></a></li>
-       <li><a href="https://www.linkedin.com/in/caesaryang/"><i class='fa fa-linkedin'></i></a></li>       
+            <li><a href="https://github.com/YANGZSHI68"><i class='fa fa-github-alt'></i></a></li>  
+            <li><a href="https://twitter.com/yangzeshi"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/tony-zeshi-yang/"><i class='fa fa-linkedin'></i></a></li>
     </ul>
 </center>
 </p>
 
 <p>
-Caesar F. Yang is a graduate student motivated by FinTech and data science. He received his Master of Science in Applied Finance degree from Pepperdine University where he studied accounting, finance, & statistics and financial modeling. He specializes in finance, data science, and investment.
+Tony Zeshi Yang is a graduate student who has motivation in risk modeling and investments field. He received his Master of Science in Applied Finance degree from Pepperdine University, from which he studied accounting, finance, & statistics and financial modeling.
 </p>
 
