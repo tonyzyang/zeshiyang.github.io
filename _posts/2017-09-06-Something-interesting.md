@@ -3,7 +3,7 @@ layout: post
 title: Got hurt
 author: Tony Z. Yang	
 tags: [new life]
-date-string: September 05, 2017
+date-string: September 06, 2017
 
 ---
 
