@@ -11,3 +11,8 @@ date-string: September 06, 2017
 
 Got hurt by the dog, three small dog in the host house, when i opened the door, dogs excited and tried to go out, then they hurt me
 </p>
+![jpg](/images/0906_2.jpg)
+![jpg](/images/0906_3.jpg)
+![jpg](/images/0906_4.jpg)
+![jpg](/images/0906_5.jpg)
+![jpg](/images/0906_6.jpg)
