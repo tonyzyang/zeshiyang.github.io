@@ -9,7 +9,7 @@ featured-image: /images/0906_1.jpg
 
 <p>
 
-Got hurt by the dog, three small dog in the host house, when i opened the door, dogs excited and tried to go out, then they hurt me
+Got hurt by the dogs, three small dogs in the host house, when I opened the door, dogs were excited and tried to go out, then they hurt me
 </p>
 
 ![jpg](/images/0906_2.jpg)
