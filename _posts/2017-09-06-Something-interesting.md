@@ -4,7 +4,7 @@ title: 3 CUTE DOGS
 author: Tony Z. Yang	
 tags: [new life]
 date-string: September 06, 2017
-featured-image: <img src="/images/0906_1.jpg", width="200" height="280">
+featured-image: /images/0906_1.jpg
 ---
 
 <p>
