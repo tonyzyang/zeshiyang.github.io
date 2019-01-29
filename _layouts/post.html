@@ -29,7 +29,15 @@
         </ul>
     </center> 
 </head>
-
+div.cnt {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    min-height: 150px;
+    min-width: 150px;
+}
 <!-- BODY -->
 <body id="post-index">
     {% include browser-upgrade.html %}
@@ -38,10 +46,16 @@
         <article class="hentry">
 
             <div class="featured-image">
+              
                 {% if page.featured-image == "" or page.featured-image == nil %}
+
+                 <div class="ctn">
                     <img src="/images/blog_header.jpg", style="width:100%">
+                 </div>
                 {% else %}
+                  <div class="ctn">
                     <img src="{{ page.featured-image }}" style="width:50%">
+                  </div>
                 {% endif %}
             </div>
             
