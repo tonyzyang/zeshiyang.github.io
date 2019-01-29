@@ -4,7 +4,7 @@ title: About
 ---
 
 <center>
-<img src="/images/header_zeshiyang.jpg", width="300" height="500">
+<img src="/images/header_zeshiyang.jpg", width="360" height="500">
 </center>
 
 <p>
