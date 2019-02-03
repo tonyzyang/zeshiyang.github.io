@@ -49,4 +49,6 @@ Finally, the rehearsal was over. After dinner, I returned to the hotel at 10 o'c
 
 In fact, if you say ppt and audio separately from the beginning, then ppt does not need not only so many things behind, but also contact others to help change
 
+反正这事还算顺利的结束了
 
+Anyway, this is a smooth end.
