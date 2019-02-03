@@ -30,7 +30,6 @@ I sent him the ppt that I changed, and videotaped with him to let him change on 
 
 第二天去试了—下苹果版的ppt没问题，但是因为少了根音频线，音频师傅拒绝给我们切换，所以就还是用的第三种方案，我放ppt, 另—个人放音频，每个音频播放前需要缓冲，不好把控，我俩就有—些偏差，而且最终是有—个背景音乐没有播放成功。
 
-
 I tried it the next day - the apple version of the ppt is no problem, but because the root audio line is missing, the audio master refused to switch to us, so I still use the third option, I put ppt, another - personal audio, Every audio needs to be buffered before playing, it is not easy to control, we have some deviations, and eventually there is - background music is not played successfully.
 
 而且周末赶上降温，场馆里没开空调，我们找了个地方做ppt，等着前面的节目排完
@@ -43,9 +42,11 @@ And on the weekend, catching up with the temperature, there is no air conditioni
 It was really cold. Everyone found a hot water bottle, poured the mineral water into it and boiled it, then poured it out and held it in his hand.
 
 终于彩排完了，吃完饭大概九点多回到宾馆十点，稍微改了下ppt他们又凑在一起合了一下弄到十一点多
+
 Finally, the rehearsal was over. After dinner, I returned to the hotel at 10 o'clock, and changed the ppt a little. They got together and got together to get more than eleven o'clock.
 
 其实要是一开始就说ppt和音频分开播，那么ppt都不需要后面那么多事，还联系别人帮忙改了
+
 In fact, if you say ppt and audio separately from the beginning, then ppt does not need not only so many things behind, but also contact others to help change
 
 
