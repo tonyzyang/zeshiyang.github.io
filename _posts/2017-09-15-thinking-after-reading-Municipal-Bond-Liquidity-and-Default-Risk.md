@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: thinking after reading Municipal Bond Liquidity and Default Risk
 author: Tony Z. Yang	
 tags: [reading and thinking]
