@@ -2,8 +2,8 @@
 
 title: A true story of company's party
 author: Tony Z. Yang
-tags: [schedule, flags]
-featured-image: /images/schedule.jpg
+tags: [real story in life]
+
 ---
 
 来武汉的这—版ppt最后的视频要重做，那边做完发给我视频如果插入ppt就特别不清晰，照片全都糊的，但单独放视频的话音频特别的嘈杂，根本不行。
