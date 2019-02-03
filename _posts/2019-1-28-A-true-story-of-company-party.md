@@ -8,17 +8,17 @@ tags: [real story in life]
 
 来武汉的这—版ppt最后的视频要重做，那边做完发给我视频如果插入ppt就特别不清晰，照片全都糊的，但单独放视频的话音频特别的嘈杂，根本不行。
 
-The last video of this version of ppt in Wuhan has to be redone. After that, I will send a video to me. If I insert the ppt, it is especially unclear. The photos are all pasted, but the audio is especially noisy when I put the video alone.
+The last video of this version of ppt in Wuhan has to be redone. After that, the video was sent to me. If I insert the ppt, it is especially unclear. The photos are all pasted, but the audio is especially noisy when I put the video alone.
 
 所以就让我把所有视频里的照片都做在了ppt里，多插入了二十多张，再做上动画和自动的切换时间。终于做好ppt之后去找负责后台的师傅，突然告诉我们不能放ppt, 
 只能分别放音频和图片，这个之前对接的人根本没跟我们提过，我们也不知道还有这样的要求，我就把ppt里所有的照片57张都摘出来了。
 
-So let me put all the photos in the video in the ppt, insert more than twenty, and then do animation and automatic switching time. Finally, after doing ppt, I went to the master who was in charge of the background. I suddenly told us that I could not put ppt.
+So let me put all the photos in the video in the ppt, insert more than twenty, and then do animation and automatic switching time. Finally, after doing ppt, I went to the master who was in charge of the background. He suddenly told us that I could not put ppt.
 I can only put audio and pictures separately. The people who had docked before did not mention it to us. We don't know that there are such requests. I took all the 57 photos in the ppt.
 
-其实那个师傅那里也可以放ppt, 就是得切换，他獭得换，就职负我们说不可以，后来磨了他半天又松口说可以用ios系统放ppt 。
+其实那个师傅那里也可以放ppt, 就是得切换，他獭得换，就和我们说不可以，后来磨了他半天又松口说可以用ios系统放ppt 。
 
-In fact, the master can also put ppt, it is necessary to switch, he has to change, incumbent negative we said no, and later grinded him for a long time and said that you can use the ios system to put ppt.
+In fact, the master can also put ppt, it is necessary to switch, he was too lazy to change, he accused us and saying no, and later grinded him for a long time and said that you can use the ios system to put ppt.
 
 但是office做的ppt用ios系统放的时候音频和视频有问题，我们又没有苹果电脑，又拜托的公司计财的—个负责公司年会的人把它苹果电脑的ppt发给我们（周五年会拷给他的时候就是苹果的不行所以重做了一遍）
 
