@@ -18,7 +18,7 @@ I can only put audio and pictures separately. The people who had docked before d
 
 其实那个师傅那里也可以放ppt, 就是得切换，他獭得换，就和我们说不可以，后来磨了他半天又松口说可以用ios系统放ppt 。
 
-In fact, the master can also put ppt, it is necessary to switch, he was too lazy to change, he accused us and saying no, and later grinded him for a long time and said that you can use the ios system to put ppt.
+In fact, the master can also put ppt, it is necessary to switch, he was too lazy to change, he accused us and saying no, and later We have been pleading with him for a long time and said that you can use the ios system to put ppt.
 
 但是office做的ppt用ios系统放的时候音频和视频有问题，我们又没有苹果电脑，又拜托的公司计财的—个负责公司年会的人把它苹果电脑的ppt发给我们（周五年会拷给他的时候就是苹果的不行所以重做了一遍）
 
