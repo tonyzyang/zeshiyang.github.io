@@ -6,11 +6,12 @@ date-string: Feb 4, 2019
 ---
 
 
-  <a href="https://www.youtube.com/watch?v=1u2qu-EmIRc&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=2">lecture0</a>
+  <a href="https://www.youtube.com/watch?v=1u2qu-EmIRc&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=2">lecture0(2018)</a><br>
+  <a href="https://video.cs50.net/web/2018/spring/lectures/0?t=7m44s">lecture0(2019)</a><br>
   official link: 
-  <a href="https://cs50.harvard.edu/web/2019/spring/lectures/0/">git</a>
-  
-  
+  <a href="https://cs50.harvard.edu/web/2019/spring/lectures/0/">git</a><br>
+  homework0:
+  <a href="https://cs50.harvard.edu/web/2019/spring/projects/0/">HW0</a>
   <br>
   <a href="https://www.youtube.com/watch?v=XQs5KcUj-Do&index=3&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture1</a> <br>
   <a href="https://www.youtube.com/watch?v=j5wysXqaIV8&index=4&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture2</a> <br>
