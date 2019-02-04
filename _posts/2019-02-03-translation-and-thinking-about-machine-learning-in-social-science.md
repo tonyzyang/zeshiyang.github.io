@@ -6,3 +6,5 @@ date-string: Feberary 3, 2019
 ---
 
 <iframe src="/images/A Guide to Solving Social Problems with Machine Learning.pdf" width="800" height="600"></iframe> 
+<iframe src="/images/Social Problems with Machine Learning.pdf" width="800" height="800"></iframe> 
+
