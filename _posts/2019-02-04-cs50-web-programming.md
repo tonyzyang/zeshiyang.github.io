@@ -22,7 +22,7 @@ date-string: Feb 4, 2019
   <a href="https://www.youtube.com/watch?v=alMRNeRJKUE&index=10&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture8</a><br>
   <a href="https://www.youtube.com/watch?v=2A7nVdAoqqk&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=11">lecture9</a><br>
   <a href="https://www.youtube.com/watch?v=QkEBn8lEERU&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=12">lecture10</a><br>
-  <a href="https://www.youtube.com/watch?v=9dLTFp-1w_A&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=13">lecture11</a>
+  <a href="https://www.youtube.com/watch?v=9dLTFp-1w_A&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=13">lecture11</a><br>
   
 
 <iframe src="https://education.github.com/git-cheat-sheet-education.pdf" width="800" height="600"></iframe>
