@@ -25,3 +25,5 @@ date-string: Feb 4, 2019
   <a href="https://www.youtube.com/watch?v=9dLTFp-1w_A&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=13">lecture11</a>
   
 
+<iframe src="https://education.github.com/git-cheat-sheet-education.pdf" width="800" height="600"></iframe>
+
