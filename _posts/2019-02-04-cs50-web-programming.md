@@ -6,8 +6,8 @@ date-string: Feb 4, 2019
 ---
 
 
-  <a href="https://www.youtube.com/watch?v=1u2qu-EmIRc&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=2">lecture0</a>
-  <a href="https://www.youtube.com/watch?v=XQs5KcUj-Do&index=3&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture1</a>
+  <a href="https://www.youtube.com/watch?v=1u2qu-EmIRc&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=2">lecture0</a> <br>
+  <a href="https://www.youtube.com/watch?v=XQs5KcUj-Do&index=3&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture1</a> <br>
   <a href="https://www.youtube.com/watch?v=j5wysXqaIV8&index=4&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture2</a>
   <a href="https://www.youtube.com/watch?v=Eda-NmcE5mQ&index=5&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture3</a>
   <a href="https://www.youtube.com/watch?v=24Kf3v7kZyE&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5&index=6">lecture4</a>
