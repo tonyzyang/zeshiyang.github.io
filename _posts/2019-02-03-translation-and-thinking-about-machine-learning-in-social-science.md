@@ -18,7 +18,8 @@ date-string: Feberary 3, 2019
     <meta charset="UTF-8">
     <style>
         p{
-            font-family: "宋体","仿宋",sans-serif;
+            
+            font-family: "Times New Roman", Times, serif;
             color:black;
            
         }
