@@ -12,18 +12,16 @@ date-string: Feberary 3, 2019
 </object>
 
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <style>
         p{
-            font-family: "宋体","仿宋",sans-serif;/*若电脑不支持宋体，则用仿宋，若不支持仿宋，则在sans-serif中找*/
+            font-family: "宋体","仿宋",sans-serif;
             font-weight: bold;
-            font-size: 200%;
-            font-style: italic;
-            color: red;/*字体颜色*/
-            opacity: 0.5;/*字体的透明度：1：默认样式，0：全透明*/
+            color:black;
+           
         }
     </style>
     <title>字体</title>
@@ -31,8 +29,8 @@ date-string: Feberary 3, 2019
 <body>
 <p>
     
-***Summary***<br>
-**How machine learning can improve public policy**<br>
+<b>Summary</b><br>
+<b>How machine learning can improve public policy</b><br>
 Applying machine learning to a dataset of over one million bond court cases<br>
 Using our algorithm’s predictions of risk instead of relying on judge intuition to reduce crimes committed by released defendants by up to 25% without having to jail any additional people. This can reduce jail populations by up to several hundred thousand people. <br>
 Applying machine learning to policy problems<br>
