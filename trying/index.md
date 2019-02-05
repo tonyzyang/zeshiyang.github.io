@@ -67,9 +67,9 @@ title: trying
     </div>
     <input id="log_submit" type="button" value="登录">
        <!--  注册按钮    -->
-      <input id ="log_submit" type="button" value="创建新账号" onclick="location.href='http://localhost:63342/python%20文件/testlogin1.html'">
+      <input id ="log_submit" type="button" value="创建新账号" onclick="location.href='/trying/register.html'">
 
-    <div class="line"><a href="#">找回密码</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost:63342/python%20文件/注册.html">注册账号</a></div>
+    <div class="line"><a href="#">找回密码</a>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 
   </div>
 </form>
