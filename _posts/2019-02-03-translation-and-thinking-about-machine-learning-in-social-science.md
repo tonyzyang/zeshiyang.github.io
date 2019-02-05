@@ -11,7 +11,8 @@ date-string: Feberary 3, 2019
       <param name="src" value="/images/Social Problems with Machine Learning.pdf">
 </object>
 
-<font style='color:black'>  
+<font style='color:black'> 
+      
 ***Summary***<br>
 **How machine learning can improve public policy**<br>
 Applying machine learning to a dataset of over one million bond court cases<br>
