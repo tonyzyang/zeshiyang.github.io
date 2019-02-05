@@ -3,211 +3,75 @@ layout: post
 title: trying
 ---
 
-import java.awt.Color;  
-import java.awt.Font;  
-import java.awt.Graphics;  
-import java.awt.image.BufferedImage;  
-import java.io.IOException;  
-import java.io.OutputStream;  
-import java.util.Random;  
- 
-import javax.imageio.ImageIO;  
- 
-public final class GraphicHelper {  
- 
-   /** 
-    * 以字符串形式返回生成的验证码，同时输出一个图片 
-    *  
-    * @param width 
-    *            图片的宽度 
-    * @param height 
-    *            图片的高度 
-    * @param imgType 
-    *            图片的类型 
-    * @param output 
-    *            图片的输出流(图片将输出到这个流中) 
-    * @return 返回所生成的验证码(字符串) 
-    */  
-   public static String create(final int width, final int height, final String imgType, OutputStream output) {  
-    StringBuffer sb = new StringBuffer();  
-   Random random = new Random();  
- 
-   BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);  
-   Graphics graphic = image.getGraphics();  
- 
-   graphic.setColor(Color.getColor("F8F8F8"));  
-   graphic.fillRect(0, 0, width, height);  
- 
-   Color[] colors = new Color[] { Color.BLUE, Color.GRAY, Color.GREEN, Color.RED, Color.BLACK, Color.ORANGE,  
-        Color.CYAN };  
-   // 在 "画板"上生成干扰线条 ( 50 是线条个数)  
-   for (int i = 0; i < 50; i++) {  
-       graphic.setColor(colors[random.nextInt(colors.length)]);  
-       final int x = random.nextInt(width);  
-       final int y = random.nextInt(height);  
-       final int w = random.nextInt(20);  
-       final int h = random.nextInt(20);  
-       final int signA = random.nextBoolean() ? 1 : -1;  
-       final int signB = random.nextBoolean() ? 1 : -1;  
-       graphic.drawLine(x, y, x + w * signA, y + h * signB);  
-   }  
- 
-   // 在 "画板"上绘制字母  
-   graphic.setFont(new Font("Comic Sans MS", Font.BOLD, 30));  
-   for (int i = 0; i < 6; i++) {  
-       final int temp = random.nextInt(26) + 97;  
-       String s = String.valueOf((char) temp);  
-       sb.append(s);  
-       graphic.setColor(colors[random.nextInt(colors.length)]);  
-       graphic.drawString(s, i * (width / 6), height - (height / 3));  
-   }  
-   graphic.dispose();  
-   try {  
-       ImageIO.write(image, imgType, output);  
-   } catch (IOException e) {  
-       e.printStackTrace();  
-   }  
-   return sb.toString();  
-   }  
- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录</title>
+    <link href="testlogin.css" rel="stylesheet" type="text/css"/>
+<style>
+    #login {
+    width: 290px;
+    height: auto;
+    overflow: hidden;
+    border: solid 1px #CCCCCC;
 }
-
-import java.io.IOException;  
-import java.io.OutputStream;  
- 
-import javax.servlet.ServletException;  
-import javax.servlet.annotation.WebServlet;  
-import javax.servlet.http.HttpServlet;  
-import javax.servlet.http.HttpServletRequest;  
-import javax.servlet.http.HttpServletResponse;  
-import javax.servlet.http.HttpSession;  
- 
-@WebServlet(urlPatterns = "/verify/regist.do" )  
-public class VerifyCodeServlet extends HttpServlet {  
- 
-   private static final long serialVersionUID = 3398560501558431737L;  
- 
-   @Override  
-   protected void service(HttpServletRequest request, HttpServletResponse response)  
-       throws ServletException, IOException {  
- 
-   // 获得 当前请求 对应的 会话对象  
-   HttpSession session = request.getSession();  
- 
-   // 从请求中获得 URI ( 统一资源标识符 )  
-   String uri = request.getRequestURI();  
-   System.out.println("hello : " + uri);  
- 
-   final int width = 180; // 图片宽度  
-   final int height = 40; // 图片高度  
-   final String imgType = "jpeg"; // 指定图片格式 (不是指MIME类型)  
-   final OutputStream output = response.getOutputStream(); 
-   // 获得可以向客户端返回图片的输出流  
-                               // (字节流)  
-   // 创建验证码图片并返回图片上的字符串  
-   String code = GraphicHelper.create(width, height, imgType, output);  
-   System.out.println("验证码内容: " + code);  
- 
-   // 建立 uri 和 相应的 验证码 的关联 ( 存储到当前会话对象的属性中 )  
-   session.setAttribute(uri, code);  
- 
-   System.out.println(session.getAttribute(uri));  
- 
-   }  
- 
+#login_title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #F60;
+    text-align: center;
 }
+.line {
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 20px;
+    text-align: center;
+    font-family: 楷体;
+}
+.line input {
+    width: 150px;
+}
+.line a {
+    font-size: 14px;
+    color: black;
+}
+.line span {
+    color: #F00;
+}
+#log_submit {
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin-left: 45px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+</style>
+</head>
 
 
+<body>
+<form action="#" method="post">
+  <div id="login">
+    <div id="login_title">登&nbsp;录</div>
 
+    <div class="line"><span id="msg"></span></div>
+    <div class="line">账号&nbsp;&nbsp;
+      <input name="username" type="text" placeholder="账号/手机/邮箱" />
+    </div>
+    <div class="line">密码&nbsp;&nbsp;
+      <input name="password" type="password" placeholder="请输入密码" />
+    </div>
+    <input id="log_submit" type="button" value="登录">
+       <!--  注册按钮    -->
+      <input id ="log_submit" type="button" value="创建新账号" onclick="location.href='http://localhost:63342/python%20文件/testlogin1.html'">
 
+    <div class="line"><a href="#">找回密码</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost:63342/python%20文件/注册.html">注册账号</a></div>
 
-<!DOCTYPE html>  
-<html>  
-<head>  
-   <meta charset="UTF-8">  
-   <title>注册</title>  
-   <link rel="stylesheet" href="styles/general.css">  
-   <link rel="stylesheet" href="styles/cell.css">  
-   <link rel="stylesheet" href="styles/form.css">  
-   <script type="text/javascript" src="js/ref.js"></script>  
-   <style type="text/css" >  
- 
-       .logo-container {  
-           margin-top: 50px ;  
-       }  
-       .logo-container img {  
-           width: 100px ;  
-       }  
- 
-       .message-container {  
-           height: 80px ;  
-       }  
- 
-       .link-container {  
-           height: 40px ;  
-           line-height: 40px ;  
-       }  
- 
-       .link-container a {  
-           text-decoration: none ;  
-       }  
- 
-   </style>  
- 
-</head>  
-<body>  
-<div class="container form-container">  
-   <form action="/wendao/regist.do" method="post">  
-       <div class="form"> <!-- 注册表单开始 -->  
-           <div class="form-row">  
-              <span class="cell-1">  
-                <i class="fa fa-user"></i>  
-              </span>  
-              <span class="cell-11" style="text-align: left;">  
-                <input type="text" name="username" placeholder="请输入用户名">  
-              </span>  
-           </div>  
- 
-         <div class="form-row">  
-              <span class="cell-1">  
-                <i class="fa fa-key"></i>  
-              </span>  
-              <span class="cell-11" style="text-align: left;">  
-                <input type="password" name="password" placeholder="请输入密码">  
-              </span>  
-         </div>  
- 
-         <div class="form-row">  
-           <span class="cell-1">  
-             <i class="fa fa-keyboard-o"></i>  
-           </span>  
-           <span class="cell-11" style="text-align: left;">  
-             <input type="password" name="confirm" placeholder="请确认密码">  
-           </span>  
-         </div>  
- 
-           <div class="form-row">  
-              <span class="cell-7">  
-                <input type="text" name="verifyCode" placeholder="请输入验证码">  
-              </span>  
-              <span class="cell-5" style="text-align: center;">  
-                <img src="/demo/verify/regist.do" onclick="myRefersh(this)">  
-              </span>  
-           </div>  
- 
-           <div class="form-row" style="border: none;">  
-             <span class="cell-6" style="text-align: left">  
-                <input type="reset" value="重置">  
-             </span>  
-             <span class="cell-6"  style="text-align:right;">  
-                <input type="submit" value="注册">  
-             </span>  
-           </div>  
- 
-       </div> <!-- 注册表单结束 -->  
-   </form>  
-</div>  
- 
-</body>  
+  </div>
+</form>
+</body>
 </html>
-
