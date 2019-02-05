@@ -11,7 +11,7 @@ date-string: Feberary 3, 2019
       <param name="src" value="/images/Social Problems with Machine Learning.pdf">
 </object>
 
-      
+<font style='color:black'>  
 ***Summary***<br>
 **How machine learning can improve public policy**<br>
 Applying machine learning to a dataset of over one million bond court cases<br>
@@ -61,4 +61,4 @@ But often it’s only the human who can see the extenuating circumstance in a gi
 Encourage the spread of machine learning to help solve the most challenging social problems in order to improve
 the lives of many. But also be reminded to be mindful, and to wear our seatbelts.
 
-
+</font>    
