@@ -56,14 +56,11 @@ Like bail, sentencing of people who have been found guilty depends not only on r
 <br />
 <b>Verify your algorithm in an experiment on data it hasn’t seen</b><br>
 
-For machine learning to be useful for policy, it must accurately predict “out-ofsample.” <br>
-That means it should be trained on one set of data, then tested on a dataset it hasn’t seen before.<br>
+For machine learning to be useful for policy, it must accurately predict “out-ofsample.” 
+That means it should be trained on one set of data, then tested on a dataset it hasn’t seen before.
 For many applications, are inherently flawed. Current practice is to report how well one’s algorithm predicts only among those cases where we can observe the outcome.<br>
-This makes it hard to evaluate whether any new machine learning tool can actually improve outcomes relative to the existing decision-making system.<br>
-an algorithm predicts well on the part of the test data where we can observe labels doesn’t mean it will make good predictions in the real world. <br>
-To do a randomized controlled trial of the sort. Then we could directly compare whether bail decisions made using machine learning lead to better outcomes than those made on comparable cases using the current system of judicial decision-making.
-finding a “natural experiment” to evaluate the tool.---random select cases<br>
-Smart users refuse to use any prediction tool that does not take this evaluation challenge more seriously.<br>
+This makes it hard to evaluate whether any new machine learning tool can actually improve outcomes relative to the existing decision-making system.an algorithm predicts well on the part of the test data where we can observe labels doesn’t mean it will make good predictions in the real world. To do a randomized controlled trial of the sort， then we could directly compare whether bail decisions made using machine learning lead to better outcomes than those made on comparable cases using the current system of judicial decision-making.
+Finding a “natural experiment” to evaluate the tool.---random select cases.Smart users refuse to use any prediction tool that does not take this evaluation challenge more seriously.<br>
 <br />
 <b>Remember there’s still a lot we don’t know</b><br>
 
