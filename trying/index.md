@@ -65,6 +65,7 @@ title: trying
     <div class="line">密码&nbsp;&nbsp;
       <input name="password" type="password" placeholder="请输入密码" />
     </div>
+    <div class="line"><a href="/">登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <input id="log_submit" type="button" value="登录">
        <!--  注册按钮    -->
       <input id ="log_submit" type="button" value="创建新账号" onclick="location.href='/trying/register.html'">
