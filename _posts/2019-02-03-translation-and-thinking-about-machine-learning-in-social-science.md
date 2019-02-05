@@ -12,8 +12,9 @@ date-string: Feberary 3, 2019
 </object>
 
 <p style="color:#000000;">
-      ***Summary***<br>
-   **How machine learning can improve public policy**<br>
+      
+***Summary***<br>
+**How machine learning can improve public policy**<br>
 Applying machine learning to a dataset of over one million bond court cases<br>
 Using our algorithm’s predictions of risk instead of relying on judge intuition to reduce crimes committed by released defendants by up to 25% without having to jail any additional people. This can reduce jail populations by up to several hundred thousand people. <br>
 Applying machine learning to policy problems<br>
@@ -60,6 +61,7 @@ But often it’s only the human who can see the extenuating circumstance in a gi
  **Pair caution with hope**<br>
 Encourage the spread of machine learning to help solve the most challenging social problems in order to improve
 the lives of many. But also be reminded to be mindful, and to wear our seatbelts.
+
 </p>
 
 
