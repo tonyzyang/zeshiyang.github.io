@@ -19,7 +19,6 @@ date-string: Feberary 3, 2019
     <style>
         p{
             font-family: "宋体","仿宋",sans-serif;
-            font-weight: bold;
             color:black;
            
         }
