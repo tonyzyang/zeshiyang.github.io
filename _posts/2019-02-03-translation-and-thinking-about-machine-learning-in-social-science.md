@@ -12,8 +12,25 @@ date-string: Feberary 3, 2019
 </object>
 
 
-
-      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        p{
+            font-family: "宋体","仿宋",sans-serif;/*若电脑不支持宋体，则用仿宋，若不支持仿宋，则在sans-serif中找*/
+            font-weight: bold;
+            font-size: 200%;
+            font-style: italic;
+            color: red;/*字体颜色*/
+            opacity: 0.5;/*字体的透明度：1：默认样式，0：全透明*/
+        }
+    </style>
+    <title>字体</title>
+</head>
+<body>
+<p>
+    
 ***Summary***<br>
 **How machine learning can improve public policy**<br>
 Applying machine learning to a dataset of over one million bond court cases<br>
@@ -63,6 +80,10 @@ But often it’s only the human who can see the extenuating circumstance in a gi
 Encourage the spread of machine learning to help solve the most challenging social problems in order to improve
 the lives of many. But also be reminded to be mindful, and to wear our seatbelts.
 
+
+</p>
+</body>
+</html>
 
 
 
