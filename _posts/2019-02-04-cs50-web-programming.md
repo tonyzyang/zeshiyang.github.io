@@ -9,7 +9,7 @@ date-string: Feb 4, 2019
   <a href="https://cs50.harvard.edu/web/2019/spring/lectures/0/">git</a><br>
   homework0:
   <a href="https://cs50.harvard.edu/web/2019/spring/projects/0/">HW0</a>
-  <br>
+  <br><br>
   <a href="https://www.youtube.com/watch?v=XQs5KcUj-Do&index=3&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture1-Git&html&CSS</a> <br>
   official link: <a href="https://cs50.harvard.edu/web/2019/spring/#html-css">html-css</a><br><br>
   <a href="https://www.youtube.com/watch?v=j5wysXqaIV8&index=4&list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">lecture2</a> <br>
