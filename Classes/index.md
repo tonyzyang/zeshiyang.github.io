@@ -9,4 +9,6 @@ title: Classes
    <a href="/Classes/time series/TS.html">time series</a><br>
    <a href="/Classes/ML/ML.html">ML</a><br>
    <a href="/Classes/ML for law/ML for law.html">ML for law</a><br>
+   <a href="/Classes/Financial Calculus">Financial Calculus</a><br>
+
 </p>
