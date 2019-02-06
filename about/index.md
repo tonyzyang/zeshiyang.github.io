@@ -21,5 +21,5 @@ title: About
    Now, he is the student in Rutgers University, learning data mining and machine learning skills.<br>
    He has received his Master of Science in Applied Finance degree from Pepperdine University, from which he studied accounting, finance, & statistics and financial modeling.<br><br> 
 </p>    
-    <p  style="color:blue;"><a href="/images/Tony-zeshi Yang resume.pdf"><b>CV/Resume</b></a></p>
+   <a href="/images/Tony-zeshi Yang resume.pdf"> <p  style="color:blue;"><b>CV/Resume</b></p></a>
 
