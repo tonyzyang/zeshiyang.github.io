@@ -1,5 +1,5 @@
 ---
-layouy: post
+layout: post
 ---
 <body background="/images/background.jpg"></body>
 <b>TIME SERIES</b><br>
