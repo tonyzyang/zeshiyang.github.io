@@ -1,6 +1,7 @@
 ---
 layouy: post
 ---
+<body background="/images/background.jpg"></body>
 **TIME SERIES**<br>
 <a href="/Classes/time series/FTS-Lecture 1.pdf">Lecture 1</a><br>
 <a href="/Classes/time series/FTS-Lecture 2.pdf">Lecture 2</a><br>
