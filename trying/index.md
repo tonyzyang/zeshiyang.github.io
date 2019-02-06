@@ -1,10 +1,11 @@
 ---
 layout: post
-title: trying
+title: Register/LOG IN
 ---
 
 <!DOCTYPE html>
 <html>
+    <center>
 <head>
 <meta charset="utf-8">
 <title>登录</title>
@@ -75,4 +76,5 @@ title: trying
   </div>
 </form>
 </body>
+ </center>
 </html>
