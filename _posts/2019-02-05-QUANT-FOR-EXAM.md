@@ -11,7 +11,7 @@ loopy()
 function loopy() {
 var sWord =""
 while (sWord != "123") {//初始密码123 
-sWord = prompt("Please input THE access code!")
+window.history.back(-1)
 }
 alert("Welcome！")
 }
