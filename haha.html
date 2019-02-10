@@ -2,15 +2,27 @@
 <html>
 
 <script type="text/javascript">
-loopy()
-function loopy() {
-var sWord =""
-while (sWord != "123") {//初始密码123 
-sWord = prompt("Please input THE access code!")
+function password() {
+var testV = 1;
+var pass1 = prompt('请输入密码','');
+while (testV < 3) {
+if (!pass1)
+history.go(-1);
+if (pass1 == "woailjy") {//初始密码123 
+alert('密码正确!');
+break;
 }
-alert("Welcome！")
+testV+=1;
+var pass1 =
+prompt('密码错误!请重新输入:');
 }
+if (pass1!="password" & testV ==3)
+history.go(-1);
+return " ";
+}
+document.write(password());
 </script>
+ 
 
 <body>
 
