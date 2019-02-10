@@ -1,1 +1,436 @@
 
+
+
+,,,python
+import pandas as pd
+import numpy as np
+
+nyc = pd.read_csv('ny.csv', index_col=False)
+
+dfc = nyc.cand_nm.value_counts()
+
+type(dfc)
+ucm = dfc.index.values
+dfc2 = pd.DataFrame({'cand_nm':ucm})
+dfc2.loc[[0,1,14,21,18],'Party']='Democrat'
+
+dfc2.loc[10,'Party']='Green'
+dfc2.loc[11,'Party']='Libertarian'
+dfc2.loc[19,'Party']='Independent'
+dfc2.loc[dfc2['Party'].isnull(),'Party']='Republican'
+
+cand_dict = dict(zip(dfc2.cand_nm, dfc2.Party))
+
+
+#cand_dict = {'Clinton, Hillary Rodham':'Democrat', 
+#           'Sanders, Bernard':'Democrat', 
+#           'Trump, Donald J.':'Republican',
+#           "O'Malley, Martin Joseph":'Democrat', 
+#           "Cruz, Rafael Edward 'Ted'":'Republican',
+#           'Walker, Scott':'Republican', 
+#           'Bush, Jeb':'Republican', 
+#           'Rubio, Marco':'Republican', 
+#           'Kasich, John R.':'Republican',
+#           'Christie, Christopher J.':'Republican', 
+#           'Stein, Jill':'Green', 
+#           'Johnson, Gary':'Libertarian',
+#           'Graham, Lindsey O.':'Republican', 
+#           'Webb, James Henry Jr.':'Democrat',
+#           'Carson, Benjamin S.':'Republican', 
+#           'Paul, Rand':'Republican', 
+#           'Fiorina, Carly':'Republican',
+#           'Santorum, Richard J.':'Republican', 
+#           'Jindal, Bobby':'Republican',
+#           'Huckabee, Mike':'Republican',
+#           'Pataki, George E.':'Republican',
+#           'Gilmore, James S III':'Republican',
+#           'Lessig, Lawrence':'Democrat',
+#           'Perry, James R. (Rick)':'Republican', 
+#           'McMullin, Evan':'Independent'}
+
+# 1) add column 'Party' to the  data frame using the dictionary on slide 33, Lecture 3
+nyc['Party'] = nyc['cand_nm'].map(cand_dict)
+print(nyc[['cand_nm','Party']].head(10))
+
+# 2) convert the contb_receipt_dt column into an actual data object
+nyc['Date'] = pd.to_datetime(nyc['contb_receipt_dt'])
+print(nyc[['contb_receipt_dt','Date']].head(10))
+
+######## GROUP BY EXAMPLE ################################
+A=pd.Series(['red','blue','yellow','orange','red','blue','yellow','orange'])
+B=pd.Series([1,1,1,1,2,2,2,2])
+Price = pd.Series(np.arange(1,9))
+dfexmp=pd.DataFrame({'A':A,'B':B,'Price':Price})
+
+dfexmp.groupby('A')['Price'].sum()
+
+# 3)Using group by, show the number of donations given to each party
+nyc.groupby('Party')['contb_receipt_amt'].count()
+
+# parties
+# Democrat       574591
+# Green            1001
+# Independent       103
+# Libertarian       782
+# Republican      72983
+# Name: contb_receipt_amt, dtype: int64
+
+# 4)Using group by, show the number of donations given to each party, by date
+nyc.groupby(['Party', 'Date'])['contb_receipt_amt'].count()
+
+# parties     contb_receipt_dt
+# Democrat    01-APR-16           1542
+#             01-AUG-15             69
+#             01-AUG-16           1074
+#             01-DEC-15            221
+#             01-DEC-16              6
+#             01-FEB-16            838
+#             01-JAN-16            146
+#             01-JUL-15            106
+#             01-JUL-16            852
+#             01-JUN-15            119
+#             01-JUN-16           1112
+#             01-MAR-16           1378
+#             01-MAY-15             74
+#             01-MAY-16            846
+#             01-NOV-15            146
+#             01-NOV-16           5525
+#             01-OCT-15            213
+#             01-OCT-16           1321
+#             01-SEP-15            111
+#             01-SEP-16           1160
+#             02-APR-16            787
+#             02-AUG-15             30
+#             02-AUG-16           1066
+#             02-DEC-15            169
+#             02-DEC-16              5
+#             02-FEB-16           1835
+#             02-JAN-16            115
+#             02-JUL-15             46
+#             02-JUL-16            611
+#             02-JUN-15             65
+#                                 ... 
+# Republican  30-JUL-15             61
+#             30-JUL-16             48
+#             30-JUN-15            389
+#             30-JUN-16            635
+#             30-MAR-15              7
+#             30-MAR-16            162
+#             30-MAY-15             10
+#             30-MAY-16              4
+#             30-NOV-15            236
+#             30-NOV-16             56
+#             30-OCT-15            184
+#             30-OCT-16             92
+#             30-SEP-15            419
+#             30-SEP-16            222
+#             31-AUG-15            118
+#             31-AUG-16            140
+#             31-DEC-14              1
+#             31-DEC-15            404
+#             31-DEC-16              9
+#             31-JAN-16            309
+#             31-JUL-14              1
+#             31-JUL-15            134
+#             31-JUL-16             88
+#             31-MAR-15             31
+#             31-MAR-16            267
+#             31-MAY-15             33
+#             31-MAY-16            139
+#             31-OCT-14              1
+#             31-OCT-15             86
+#             31-OCT-16            142
+# Name: contb_receipt_amt, Length: 1737, dtype: int64
+
+
+# 5)Using group by, show the total amount of donations given to each party
+nyc.groupby('Party')['contb_receipt_amt'].sum()
+pd.options.display.float_format = '{:,.2f}'.format
+nyc.groupby('Party')['contb_receipt_amt'].sum()
+
+# parties
+# Democrat       1.536526e+08
+# Green          2.636641e+05
+# Independent    3.018750e+04
+# Libertarian    2.468605e+05
+# Republican     1.745958e+07
+# Name: contb_receipt_amt, dtype: float64
+
+
+# 6)Using group by, show the total amount of donations given to each party, by date
+nyc.groupby(['Party', 'Date'])['contb_receipt_amt'].sum()
+
+# parties     contb_receipt_dt
+# Democrat    01-APR-16           162457.05
+#             01-AUG-15            18560.33
+#             01-AUG-16           222029.56
+#             01-DEC-15            49278.58
+#             01-DEC-16             -205.00
+#             01-FEB-16           120723.92
+#             01-JAN-16            13554.18
+#             01-JUL-15            43183.01
+#             01-JUL-16            71783.59
+#             01-JUN-15           153522.56
+#             01-JUN-16            69596.69
+#             01-MAR-16           137860.93
+#             01-MAY-15            95948.16
+#             01-MAY-16            18845.02
+#             01-NOV-15            13816.72
+#             01-NOV-16           469353.98
+#             01-OCT-15            27138.99
+#             01-OCT-16           239339.64
+#             01-SEP-15            46542.45
+#             01-SEP-16           165216.78
+#             02-APR-16            76199.05
+#             02-AUG-15             6267.41
+#             02-AUG-16           203631.53
+#             02-DEC-15            54011.18
+#             02-DEC-16            -2170.84
+#             02-FEB-16           220024.18
+#             02-JAN-16            23110.19
+#             02-JUL-15            13250.80
+#             02-JUL-16            31972.60
+#             02-JUN-15            64224.53
+#                                  ...    
+# Republican  30-JUL-15            31920.16
+#             30-JUL-16            10409.97
+#             30-JUN-15           565752.16
+#             30-JUN-16            71762.78
+#             30-MAR-15             1535.00
+#             30-MAR-16            16908.73
+#             30-MAY-15              676.60
+#             30-MAY-16              423.50
+#             30-NOV-15            98746.63
+#             30-NOV-16             8696.67
+#             30-OCT-15            43123.71
+#             30-OCT-16            24295.18
+#             30-SEP-15           306763.84
+#             30-SEP-16            94909.65
+#             31-AUG-15            57974.56
+#             31-AUG-16            42678.35
+#             31-DEC-14               50.00
+#             31-DEC-15           100033.86
+#             31-DEC-16              990.00
+#             31-JAN-16            18031.42
+#             31-JUL-14              300.00
+#             31-JUL-15           129259.80
+#             31-JUL-16            14837.80
+#             31-MAR-15            42440.99
+#             31-MAR-16            17382.79
+#             31-MAY-15            36622.32
+#             31-MAY-16            13158.59
+#             31-OCT-14              500.00
+#             31-OCT-15            10435.16
+#             31-OCT-16            36528.18
+# Name: contb_receipt_amt, Length: 1737, dtype: float64
+
+
+# 7)Which occupations donated the top 5 most money?
+df7 = nyc.groupby('contbr_occupation')['contb_receipt_amt'].sum().reset_index()
+df7.sort_values('contb_receipt_amt', ascending=False, inplace=True)
+df7.head(5)
+
+df7.nlargest(5,'contb_receipt_amt')
+
+# >>> Seven_Q_Top5.head(5)
+#            contbr_occupation  contb_receipt_amt
+# 13284                RETIRED        10094554.11
+# 1246                ATTORNEY         7094876.09
+# 7893   INFORMATION REQUESTED         3756408.91
+# 8616                  LAWYER         3202850.66
+# 10328           NOT EMPLOYED         2856233.71
+
+
+
+# 8)Which occupations donated the least 5 amount of money?
+df8 = nyc.groupby('contbr_occupation')['contb_receipt_amt'].sum().reset_index()
+df8.sort_values(by='contb_receipt_amt',inplace=True)
+df8.head(5)
+
+
+df7.tail(5)
+df8.nsmallest(5,'contb_receipt_amt')
+
+df8[df8.contb_receipt_amt>0].head(5)
+
+# >>> Eight_Q_Tail5.head(5)
+#         contbr_occupation  contb_receipt_amt
+# 7524    HOMECARE DIRECTOR           -1000.00
+# 2957             COACHING            -469.36
+# 16304  UTILITIES ENGINEER            -355.00
+# 15717    TENANT RELATIONS            -340.00
+# 9335    MARKETING DIRECTO            -320.00
+
+
+
+
+
+
+
+# 9)Which employer's employees gave the most money, give the top 5.
+
+df9 = nyc.groupby('contbr_employer')['contb_receipt_amt'].sum().reset_index()
+df9.sort_values('contb_receipt_amt', ascending=False, inplace=True)
+df9.iloc[0:5]
+
+
+
+# ... nine
+#             contbr_employer  contb_receipt_amt
+# 30990          SELF-EMPLOYED        12060418.91
+# 29175                RETIRED         4748780.15
+# 16444  INFORMATION REQUESTED         3611890.31
+# 24568           NOT EMPLOYED         1804569.37
+# 24337                   NONE         1337244.12
+
+
+# 10) For each candidate, what were the top 5 occupations that donated to their election
+df10 = nyc.groupby(['cand_nm', 'contbr_occupation'])['contb_receipt_amt'].sum().reset_index()
+df10.sort_values(['cand_nm', 'contb_receipt_amt'], ascending=[True, False],inplace=True)
+df10.groupby('cand_nm').head(5)
+
+
+
+# >>> Res_top5
+#                        cand_nm                       contbr_occupation  \
+# 0                    Bush, Jeb                                 RETIRED   
+# 1                    Bush, Jeb                               HOMEMAKER   
+# 2                    Bush, Jeb                                ATTORNEY   
+# 3                    Bush, Jeb                                 FINANCE   
+# 4                    Bush, Jeb  INFORMATION REQUESTED PER BEST EFFORTS   
+# 5          Carson, Benjamin S.                                 RETIRED   
+# 6          Carson, Benjamin S.  INFORMATION REQUESTED PER BEST EFFORTS   
+# 7          Carson, Benjamin S.                               PHYSICIAN   
+# 8          Carson, Benjamin S.                               HOMEMAKER   
+# 9          Carson, Benjamin S.                          ADMINISTRATION   
+# 10    Christie, Christopher J.                               HOMEMAKER   
+# 11    Christie, Christopher J.  INFORMATION REQUESTED PER BEST EFFORTS   
+# 12    Christie, Christopher J.                                ATTORNEY   
+# 13    Christie, Christopher J.                                 RETIRED   
+# 14    Christie, Christopher J.                               EXECUTIVE   
+# 15     Clinton, Hillary Rodham                                 RETIRED   
+# 16     Clinton, Hillary Rodham                                ATTORNEY   
+# 17     Clinton, Hillary Rodham                                  LAWYER   
+# 18     Clinton, Hillary Rodham                   INFORMATION REQUESTED   
+# 19     Clinton, Hillary Rodham                               HOMEMAKER   
+# 20   Cruz, Rafael Edward 'Ted'                                 RETIRED   
+# 21   Cruz, Rafael Edward 'Ted'  INFORMATION REQUESTED PER BEST EFFORTS   
+# 22   Cruz, Rafael Edward 'Ted'                                ATTORNEY   
+# 23   Cruz, Rafael Edward 'Ted'                               HOMEMAKER   
+# 24   Cruz, Rafael Edward 'Ted'                                  LAWYER   
+# 25              Fiorina, Carly                                 RETIRED   
+# 26              Fiorina, Carly  INFORMATION REQUESTED PER BEST EFFORTS   
+# 27              Fiorina, Carly                               HOMEMAKER   
+# 28              Fiorina, Carly                                ATTORNEY   
+# 29              Fiorina, Carly                                INVESTOR   
+# ..                         ...                                     ...   
+# 94            Sanders, Bernard                            NOT EMPLOYED   
+# 95            Sanders, Bernard                                 RETIRED   
+# 96            Sanders, Bernard                                ATTORNEY   
+# 97            Sanders, Bernard                                 TEACHER   
+# 98            Sanders, Bernard                               PROFESSOR   
+# 99        Santorum, Richard J.                                 RETIRED   
+# 100       Santorum, Richard J.  INFORMATION REQUESTED PER BEST EFFORTS   
+# 101       Santorum, Richard J.                                CHAIRMAN   
+# 102       Santorum, Richard J.                                INVESTOR   
+# 103       Santorum, Richard J.                                 MANAGER   
+# 104                Stein, Jill                                 RETIRED   
+# 105                Stein, Jill                                ATTORNEY   
+# 106                Stein, Jill                               PROFESSOR   
+# 107                Stein, Jill                              CONSULTANT   
+# 108                Stein, Jill                                  ARTIST   
+# 109           Trump, Donald J.                                 RETIRED   
+# 110           Trump, Donald J.                   INFORMATION REQUESTED   
+# 111           Trump, Donald J.                                ATTORNEY   
+# 112           Trump, Donald J.                               PHYSICIAN   
+# 113           Trump, Donald J.                             REAL ESTATE   
+# 114              Walker, Scott                   INFORMATION REQUESTED   
+# 115              Walker, Scott                                 RETIRED   
+# 116              Walker, Scott                               HOMEMAKER   
+# 117              Walker, Scott                             INVESTMENTS   
+# 118              Walker, Scott                                     CEO   
+# 119      Webb, James Henry Jr.                                 RETIRED   
+# 120      Webb, James Henry Jr.                                  EDITOR   
+# 121      Webb, James Henry Jr.                                  AUTHOR   
+# 122      Webb, James Henry Jr.                                 ARTISIT   
+# 123      Webb, James Henry Jr.                                INVESTOR   
+
+#      contb_receipt_amt  
+# 0            399174.31  
+# 1            286522.00  
+# 2            228157.00  
+# 3            144400.00  
+# 4            132795.00  
+# 5            257266.59  
+# 6             92623.00  
+# 7             22513.16  
+# 8             19304.00  
+# 9             13300.00  
+# 10            73050.00  
+# 11            52750.00  
+# 12            47728.00  
+# 13            38925.00  
+# 14            35100.00  
+# 15          6817180.60  
+# 16          5889758.91  
+# 17          2827222.52  
+# 18          2612108.21  
+# 19          1876407.49  
+# 20           407659.05  
+# 21           150767.51  
+# 22           102883.00  
+# 23            64671.00  
+# 24            52406.00  
+# 25            61802.50  
+# 26            42650.00  
+# 27            19450.00  
+# 28            15725.00  
+# 29            10250.00  
+# ..                 ...  
+# 94          1943448.63  
+# 95           286696.71  
+# 96           272792.70  
+# 97           223394.03  
+# 98           191181.60  
+# 99             4220.00  
+# 100            3000.00  
+# 101            2700.00  
+# 102            2700.00  
+# 103            2700.00  
+# 104           20119.00  
+# 105           14544.00  
+# 106            9408.20  
+# 107            7359.00  
+# 108            7315.00  
+# 109         1295065.17  
+# 110          865428.60  
+# 111          160364.25  
+# 112          129875.04  
+# 113          129575.40  
+# 114           72550.00  
+# 115           28503.00  
+# 116           18900.00  
+# 117           11800.00  
+# 118           11250.00  
+# 119            6100.00  
+# 120            5300.00  
+# 121            5300.00  
+# 122            2700.00  
+# 123            2700.00  
+
+# [124 rows x 3 columns]
+
+
+# 11) For the 5 candidates that raised the most money, graph their donations by time, in a line graph
+# Get the name of the 5 candidates that raised the most money
+df11 = nyc.groupby('cand_nm')['contb_receipt_amt'].sum().reset_index()
+df11_p = df11.nlargest(5,'contb_receipt_amt')
+df11_g = nyc[nyc.cand_nm.isin(df11_p.cand_nm)][['cand_nm','Date','contb_receipt_amt']]
+
+dfpiv=pd.pivot_table(df11_g , values='contb_receipt_amt', index=['Date'],columns=['cand_nm'], aggfunc=np.sum)
+dfpiv.loc['2016-01-01':'2016-01-30'].plot.line()
+
+,,,
+
+
+       
