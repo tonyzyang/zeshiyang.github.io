@@ -1,5 +1,5 @@
 ---
-title:  Quantitive
+title:  Quantitive（all QUANT slides/ppt for FRM1,CFA1&CFA2）
 subtitle: quantitive
 author: Tony Z. Yang
 tags: [EXAM]
