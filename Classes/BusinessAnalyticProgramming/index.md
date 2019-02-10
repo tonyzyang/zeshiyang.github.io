@@ -20,7 +20,7 @@ dfc2.loc[19,'Party']='Independent'
 dfc2.loc[dfc2['Party'].isnull(),'Party']='Republican'
 
 cand_dict = dict(zip(dfc2.cand_nm, dfc2.Party))
-
+```
 
 #cand_dict = {'Clinton, Hillary Rodham':'Democrat', 
 #           'Sanders, Bernard':'Democrat', 
@@ -47,7 +47,7 @@ cand_dict = dict(zip(dfc2.cand_nm, dfc2.Party))
 #           'Lessig, Lawrence':'Democrat',
 #           'Perry, James R. (Rick)':'Republican', 
 #           'McMullin, Evan':'Independent'}
-
+```python
 # 1) add column 'Party' to the  data frame using the dictionary on slide 33, Lecture 3
 nyc['Party'] = nyc['cand_nm'].map(cand_dict)
 print(nyc[['cand_nm','Party']].head(10))
@@ -66,7 +66,7 @@ dfexmp.groupby('A')['Price'].sum()
 
 # 3)Using group by, show the number of donations given to each party
 nyc.groupby('Party')['contb_receipt_amt'].count()
-
+```
 # parties
 # Democrat       574591
 # Green            1001
@@ -74,10 +74,10 @@ nyc.groupby('Party')['contb_receipt_amt'].count()
 # Libertarian       782
 # Republican      72983
 # Name: contb_receipt_amt, dtype: int64
-
+```python
 # 4)Using group by, show the number of donations given to each party, by date
 nyc.groupby(['Party', 'Date'])['contb_receipt_amt'].count()
-
+```
 # parties     contb_receipt_dt
 # Democrat    01-APR-16           1542
 #             01-AUG-15             69
@@ -142,12 +142,12 @@ nyc.groupby(['Party', 'Date'])['contb_receipt_amt'].count()
 #             31-OCT-16            142
 # Name: contb_receipt_amt, Length: 1737, dtype: int64
 
-
+```python
 # 5)Using group by, show the total amount of donations given to each party
 nyc.groupby('Party')['contb_receipt_amt'].sum()
 pd.options.display.float_format = '{:,.2f}'.format
 nyc.groupby('Party')['contb_receipt_amt'].sum()
-
+```
 # parties
 # Democrat       1.536526e+08
 # Green          2.636641e+05
@@ -156,10 +156,10 @@ nyc.groupby('Party')['contb_receipt_amt'].sum()
 # Republican     1.745958e+07
 # Name: contb_receipt_amt, dtype: float64
 
-
+```python
 # 6)Using group by, show the total amount of donations given to each party, by date
 nyc.groupby(['Party', 'Date'])['contb_receipt_amt'].sum()
-
+```
 # parties     contb_receipt_dt
 # Democrat    01-APR-16           162457.05
 #             01-AUG-15            18560.33
@@ -224,7 +224,7 @@ nyc.groupby(['Party', 'Date'])['contb_receipt_amt'].sum()
 #             31-OCT-16            36528.18
 # Name: contb_receipt_amt, Length: 1737, dtype: float64
 
-
+```python
 # 7)Which occupations donated the top 5 most money?
 df7 = nyc.groupby('contbr_occupation')['contb_receipt_amt'].sum().reset_index()
 df7.sort_values('contb_receipt_amt', ascending=False, inplace=True)
@@ -233,6 +233,7 @@ df7.head(5)
 df7.nlargest(5,'contb_receipt_amt')
 
 # >>> Seven_Q_Top5.head(5)
+```
 #            contbr_occupation  contb_receipt_amt
 # 13284                RETIRED        10094554.11
 # 1246                ATTORNEY         7094876.09
@@ -240,7 +241,7 @@ df7.nlargest(5,'contb_receipt_amt')
 # 8616                  LAWYER         3202850.66
 # 10328           NOT EMPLOYED         2856233.71
 
-
+```python
 
 # 8)Which occupations donated the least 5 amount of money?
 df8 = nyc.groupby('contbr_occupation')['contb_receipt_amt'].sum().reset_index()
@@ -252,7 +253,7 @@ df7.tail(5)
 df8.nsmallest(5,'contb_receipt_amt')
 
 df8[df8.contb_receipt_amt>0].head(5)
-
+```
 # >>> Eight_Q_Tail5.head(5)
 #         contbr_occupation  contb_receipt_amt
 # 7524    HOMECARE DIRECTOR           -1000.00
@@ -264,7 +265,7 @@ df8[df8.contb_receipt_amt>0].head(5)
 
 
 
-
+```python
 
 
 # 9)Which employer's employees gave the most money, give the top 5.
@@ -273,7 +274,7 @@ df9 = nyc.groupby('contbr_employer')['contb_receipt_amt'].sum().reset_index()
 df9.sort_values('contb_receipt_amt', ascending=False, inplace=True)
 df9.iloc[0:5]
 
-
+```
 
 # ... nine
 #             contbr_employer  contb_receipt_amt
@@ -283,12 +284,12 @@ df9.iloc[0:5]
 # 24568           NOT EMPLOYED         1804569.37
 # 24337                   NONE         1337244.12
 
-
+```python
 # 10) For each candidate, what were the top 5 occupations that donated to their election
 df10 = nyc.groupby(['cand_nm', 'contbr_occupation'])['contb_receipt_amt'].sum().reset_index()
 df10.sort_values(['cand_nm', 'contb_receipt_amt'], ascending=[True, False],inplace=True)
 df10.groupby('cand_nm').head(5)
-
+```
 
 
 # >>> Res_top5
@@ -420,7 +421,7 @@ df10.groupby('cand_nm').head(5)
 
 # [124 rows x 3 columns]
 
-
+```python
 # 11) For the 5 candidates that raised the most money, graph their donations by time, in a line graph
 # Get the name of the 5 candidates that raised the most money
 df11 = nyc.groupby('cand_nm')['contb_receipt_amt'].sum().reset_index()
