@@ -1,0 +1,29 @@
+---
+title: 莫非定律到底是真的吗
+author: Tony Z. Yang
+tags: [new life]
+date-string: Feberary 9, 2019
+---
+<center>
+莫非定律到底是真的吗？
+</center>
+最近真的想了好久好久，不想发生的事不知道会不会真的发生，就算希望不大但还是想试一试，要不然自己真的会后悔的，要是真的能有结果就很开心啦。 安心努力提升自己吧，一切随缘，希望能开开心心有个好结果吧
+
+
+
+<script>
+function password(){
+var p = prompt("Input the Password","");
+if(p!='123456'){
+alert('Wrong Password!');
+return false;
+}else{
+alert("Yes!");
+return true;
+}
+}
+</script>
+
+<a href="www.baidu.com" onclick="return password();">Go to baidu</a>
+</body>
+</html>
