@@ -39,6 +39,9 @@ Cfa L1 QUANT
    <embed src="/images/CFAL1QUANT.pdf" width="800" height="600">
 </embed>
 
-
+Cfa L2 QUANT
+<center>
+   <embed src="/images/CFAL2QUANT.pdf" width="800" height="600">
+</embed>
 
 
