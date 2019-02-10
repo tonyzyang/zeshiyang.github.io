@@ -24,6 +24,6 @@ return true;
 }
 </script>
 
-<a href="www.baidu.com" onclick="return password();">Go to baidu</a>
+<a href="算希望不大但还是想" onclick="return password();">Go to baidu</a>
 </body>
 </html>
