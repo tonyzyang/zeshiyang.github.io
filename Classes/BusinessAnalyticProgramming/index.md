@@ -1,7 +1,7 @@
 
 
 
-,,,python
+```python
 import pandas as pd
 import numpy as np
 
@@ -430,7 +430,7 @@ df11_g = nyc[nyc.cand_nm.isin(df11_p.cand_nm)][['cand_nm','Date','contb_receipt_
 dfpiv=pd.pivot_table(df11_g , values='contb_receipt_amt', index=['Date'],columns=['cand_nm'], aggfunc=np.sum)
 dfpiv.loc['2016-01-01':'2016-01-30'].plot.line()
 
-,,,
+```
 
 
        
