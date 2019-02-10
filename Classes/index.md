@@ -11,5 +11,6 @@ title: Classes
    <a href="/Classes/ML for law/ML for law.html">ML for law</a><br>
    <a href="/Classes/Financial Calculus">Financial Calculus</a><br>
    <a href="/Classes/Acct">Accounting</a><br>
+    <a href="/Classes/BusinessAnalyticProgramming/">Business-Analytic-Programming</a><br>
 
 </p>
