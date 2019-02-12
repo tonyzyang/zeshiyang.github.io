@@ -7,5 +7,5 @@ title: ML and DM projects
    ML stands for machine learning.<br>
    DM stands for Data mining, here would be some of my DS projects for my personal records<br>
 
-   <a href="/ML and DM projects/TS-R-datacamp.jpg><p style="color:blue;"><b>TS-R-datacamp</b></p></a>
+   <a href="/ML and DM projects/TS-R-datacamp.jpg"><p style="color:blue;"><b>TS-R-datacamp</b></p></a>
 </p>
