@@ -1,0 +1,11 @@
+---
+layout: post
+---
+1. draw all variables in one time:<br>
+
+<blockquote>
+gas %>%
+  keep(is.numeric) %>% <br/>
+  gather() %>% <br/>
+  ggplot(aes(value)) +facet_wrap(~ key, scales = "free") +geom_histogram()
+</blockquote>
