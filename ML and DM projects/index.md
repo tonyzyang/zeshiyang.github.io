@@ -9,3 +9,6 @@ title: ML and DM projects
 
    <a href="/ML and DM projects/TS-R-datacamp.jpg"><p style="color:blue;"><b>TS-R-datacamp</b></p></a>
 </p>
+
+<a href="/ML and DM projects/useful-function(R)"><p style="color:blue;"><b>some-useful functions(R)</b></p></a>
+<a href="/ML and DM projects/useful-function(python)"><p style="color:blue;"><b>some-useful functions(python)</b></p></a>
