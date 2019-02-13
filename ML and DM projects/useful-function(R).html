@@ -4,7 +4,7 @@ layout: post
 1. draw all variables in one time:
 https://drsimonj.svbtle.com/quick-plot-of-all-variables <br>
 <blockquote>
-gas %>%
+gas %>%<br/>
   keep(is.numeric) %>% <br/>
   gather() %>% <br/>
   ggplot(aes(value)) +facet_wrap(~ key, scales = "free") +geom_histogram()
@@ -16,6 +16,6 @@ d %>%<br/>
   keep(is.numeric) %>%                     # Keep only numeric columns<br/>
   gather() %>%                             # Convert to key-value pairs<br/>
   ggplot(aes(value)) +                     # Plot the values<br/>
-    facet_wrap(~ key, scales = "free") +   # In separate panels<br/>
-    geom_density()                         # as density<br/>
+       facet_wrap(~ key, scales = "free") +   # In separate panels<br/>
+       geom_density()                         # as density<br/>
 </blockquote>
