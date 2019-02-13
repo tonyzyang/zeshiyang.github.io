@@ -1,5 +1,5 @@
 ---
-title: good to know-Big Data and Super-Computers: foundations of Cyber Communism大数据与超级计算-网络共产主义的基础
+title: good to know-Big Data and Super-Computers-foundations of Cyber Communism大数据与超级计算-网络共产主义的基础
 author: Tony Z. Yang
 tags: [very interesting]
 date-string: Feberary 13, 2019
