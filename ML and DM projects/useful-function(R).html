@@ -22,6 +22,6 @@ d %>%<br/>
 
 
 R base function as.Date handles this type of conversion nicely. The trick is that you have to provide the origin, which in Excel is December 30, 1899.
-```{r}
+```r
 as.Date(data, origin = "1899-12-30")
 '''
