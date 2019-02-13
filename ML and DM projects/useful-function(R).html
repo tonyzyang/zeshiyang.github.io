@@ -9,3 +9,13 @@ gas %>%
   gather() %>% <br/>
   ggplot(aes(value)) +facet_wrap(~ key, scales = "free") +geom_histogram()
 </blockquote>
+
+<blockquote>
+library(ggplot2)<br/>
+d %>%<br/>
+  keep(is.numeric) %>%                     # Keep only numeric columns<br/>
+  gather() %>%                             # Convert to key-value pairs<br/>
+  ggplot(aes(value)) +                     # Plot the values<br/>
+    facet_wrap(~ key, scales = "free") +   # In separate panels<br/>
+    geom_density()                         # as density<br/>
+</blockquote>
