@@ -3,18 +3,8 @@ title: FRM PPT
 subtitle: quantitive
 author: Tony Z. Yang
 tags: [EXAM]
-date-string: Feberary 3, 2019
+date-string: Feberary 17, 2019
 ---
-<script type="text/javascript">
-loopy()
-function loopy() {
-var sWord =""
-while (sWord != "123") {//初始密码123 
-sWord = prompt("Please input THE access code!")
-}
-alert("Welcome！")
-}
-</script>
 
 <center>
    <embed src="/images/frmL1-quantitive.pdf" width="800" height="600">
