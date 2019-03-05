@@ -13,6 +13,7 @@ practice after learning from the above: <br>
 <a href="/ML and DM projects/visual for China-CPI data Using R.html"><p style="color:blue;"><b>visual for China-CPI data Using R(2014-2018)</b></p></a><br>
 <b>practice 2</b></br>
 <a href="/ML and DM projects/ARIMA WITH R.pdf"><p style="color:blue;"><b>ARIMA WITH R</b></p></a></br>
+<a href="https://rutgers.app.box.com/file/415584985920"><p style="color:blue;"><b>ARIMA WITH R-box</b></p></a></br>
 
 <a href="/ML and DM projects/useful-function(R)"><p style="color:blue;"><b>some-useful functions(R)</b></p></a><br>
 <a href="/ML and DM projects/useful-function(python)"><p style="color:blue;"><b>some-useful functions(python)</b></p></a><br>
