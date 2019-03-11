@@ -13,6 +13,9 @@ practice after learning from the above: <br>
 <a href="/ML and DM projects/visual for China-CPI data Using R.html"><p style="color:blue;"><b>visual for China-CPI data Using R(2014-2018)</b></p></a><br>
 <b>practice 2</b></br>
 <a href="https://docs.google.com/document/d/1SKlPsq5YyzC6MK2npfFqlLuWcslEtuUcu6iljmX_Y5U/edit?usp=sharing"><p style="color:blue;"><b>ARIMA WITH R-GD</b></p></a></br>
+<a href="/ML and DM projects/stock_price_with——goog.html"><p style="color:blue;"><b>stock price forecasting-GOOG</b></p></a></br>
+
+
 <a href="https://drive.google.com/file/d/1k_-SbDnuNi5DOL68qNfnIHaWJKCUGZ9j/view?usp=sharing"><p style="color:blue;"><b>time series forcasting with R-gd</b></p></a></br>
 
 
