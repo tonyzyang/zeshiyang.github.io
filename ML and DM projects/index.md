@@ -19,7 +19,7 @@ practice after learning from the above: <br>
 <a href="https://drive.google.com/file/d/1k_-SbDnuNi5DOL68qNfnIHaWJKCUGZ9j/view?usp=sharing"><p style="color:blue;"><b>time series forcasting with R-gd</b></p></a></br>
 
 **Practice 3: stock price sensitive data mining- Python**
-<a href="/ML and DM projects/StockPredictionModelv3-v5.ipynb"><p style="color:blue;"><b>stock price sensitive data mining-Python</b></p></a></br>
+<a href="/ML and DM projects/StockPredictionModelv3-v5.html"><p style="color:blue;"><b>stock price sensitive data mining-Python</b></p></a></br>
 
 
 
