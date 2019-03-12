@@ -20,8 +20,8 @@ practice after learning from the above: <br>
 
 **Practice 3: stock price sensitive data mining- Python**
 <a href="/ML and DM projects/StockPredictionModelv3-v5.html"><p style="color:blue;"><b>stock price sensitive data mining-Python</b></p></a></br>
-
-
+**Practice 4: nomaly plots options-Python**
+<a href="/ML and DM projects/anomaly-plots-options.html"><p style="color:blue;"><b>anomaly plots options-Python</b></p></a></br>
 
 
 <a href="/ML and DM projects/useful-function(R)"><p style="color:blue;"><b>some-useful functions(R)</b></p></a><br>
