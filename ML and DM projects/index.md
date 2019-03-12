@@ -16,6 +16,12 @@ practice after learning from the above: <br>
 <a href="/ML and DM projects/stock_price_with——goog.html"><p style="color:blue;"><b>stock price backtesting with Chinese stock  and forecasting with GOOG</b></p></a></br>
 
 
+
+**projects learning**
+<a href="/ML and DM projects/LSTM STOCK ANALYSIS/index.md"><p style="color:blue;"><b>LSTM STOCK ANALYSIS learning and projects</b></p></a></br>
+
+
+
 <a href="https://drive.google.com/file/d/1k_-SbDnuNi5DOL68qNfnIHaWJKCUGZ9j/view?usp=sharing"><p style="color:blue;"><b>time series forcasting with R-gd</b></p></a></br>
 
 **Practice 3: stock price sensitive data mining- Python**
