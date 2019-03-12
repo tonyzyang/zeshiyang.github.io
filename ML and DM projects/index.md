@@ -17,7 +17,7 @@ practice after learning from the above: <br>
 
 
 
-**projects learning**
+**projects 5 learning**
 <a href="/ML and DM projects/LSTM STOCK ANALYSIS/index.md"><p style="color:blue;"><b>LSTM STOCK ANALYSIS learning and projects</b></p></a></br>
 
 
