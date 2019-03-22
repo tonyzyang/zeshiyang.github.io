@@ -9,10 +9,15 @@ from tensorflow.python.keras.layers import LSTM,Dense<br>
 from tensorflow.python.keras.models import load_model<br>
 from tensorflow.python.keras.layers import InputLayer, Input<br>
 from tensorflow.python.keras.layers import Reshape, MaxPooling2D<br>
-from tensorflow.python.keras.layers import Conv2D, Dense, Flatten<br>
+from tensorflow.python.keras.layers import Conv2D, Dense, Flatten<br> <br>
   
   
 #add the ‘，’ after the name, can show the full name, unless only show the first letter. <br>
-plt.legend(labels=(df.columns[i],),loc=0)
+plt.legend(labels=(df.columns[i],),loc=0) <br> <br> <br>
+  
+#CHANG THE VALUE OF specific column with specific needs. h is the column name that we want to change the data, keep other column value stable <br>
+df2.loc[df2['CHG'] >=0,"h"] = 1 <br>
+df2.loc[df2['CHG']<=0,"h"] = 0 <br>
+df2
 
 </blockquote>
