@@ -28,10 +28,8 @@ practice after learning from the above: <br>
 **projects for stock market using WIND data API**
 <a href="https://www.windquant.com/qntcloud/article?10c3c19c-31cc-48a0-b0a9-fcfe40e1281a"><p style="color:blue;"><b>Personal-OLS-VaR practice</b></p></a></br>
 
-
-
-
-
+**personal practice 6: Financial modelling-sharp-ratio&datamining methods**
+<a href="/ML and DM projects/Financial modelling-sharp-ratio&datamining methods.html"><p style="color:blue;"><b> Financial modelling-sharp-ratio&datamining methods</b></p></a></br>
 
 
 
