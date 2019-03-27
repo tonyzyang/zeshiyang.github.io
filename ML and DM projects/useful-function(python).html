@@ -43,7 +43,7 @@ df.dropna(axis=1,how='any')
 
 <blockquote>
   
-#convert the date data in Dataframe: "20180920"-->"2018-09-20"
+#convert the date data in Dataframe: "20180920"-->"2018-09-20"<br>
   
 df['date']=pd.Series([pd.to_datetime(date) for date in df['date']])
   
