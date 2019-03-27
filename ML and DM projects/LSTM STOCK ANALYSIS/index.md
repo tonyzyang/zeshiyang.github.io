@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: project5-learning: lstm stock price using tensorflow-python
+title: project5-learning: lstm stock price using tensorflow
 ---
 
 
