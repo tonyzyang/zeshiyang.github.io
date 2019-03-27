@@ -39,3 +39,14 @@ df.dropna(axis=0,how='any')<br>
 删除表中含有任何NaN的列<br>
 df.dropna(axis=1,how='any')
 </blockquote>
+
+
+<blockquote>
+  
+#convert the date data in Dataframe: "20180920"-->"2018-09-20"
+  
+df['date']=pd.Series([pd.to_datetime(date) for date in df['date']])
+  
+  
+
+</blockquote>
