@@ -15,7 +15,7 @@ practice after learning from the above: <br>
 <a href="https://docs.google.com/document/d/1SKlPsq5YyzC6MK2npfFqlLuWcslEtuUcu6iljmX_Y5U/edit?usp=sharing"><p style="color:blue;"><b>ARIMA WITH R-GD</b></p></a></br>
 <a href="/ML and DM projects/stock_price_with——goog.html"><p style="color:blue;"><b>stock price backtesting with Chinese stock  and forecasting with GOOG</b></p></a></br>
 <a href="https://drive.google.com/file/d/1k_-SbDnuNi5DOL68qNfnIHaWJKCUGZ9j/view?usp=sharing"><p style="color:blue;"><b>time series forcasting with R-gd</b></p></a></br>
-## Practice 3: <a href="/ML and DM projects/StockPredictionModelv3-v5.html"><p style="color:blue;"><b>Data mining Course Projectstock price sensitive data mining-Python</b></p></a></br>
+## Practice 3: <a href="/ML and DM projects/StockPredictionModelv3-v5.html"><p style="color:blue;"><b>Data mining Course Project: stock price sensitive data mining-Python</b></p></a></br>
 ## Projects learning 4: <a href="/ML and DM projects/anomaly-plots-options.html"><p style="color:blue;"><b>anomaly plots options-Python</b></p></a></br>
 
 
