@@ -23,7 +23,7 @@ practice after learning from the above: <br>
 
 
 **projects 5 learning LSTM**
-<a href="/ML and DM projects/LSTM STOCK ANALYSIS/index.md"><p style="color:blue;"><b>LSTM STOCK ANALYSIS learning and projects</b></p></a><br>
+<a href="/ML and DM projects/LSTM STOCK ANALYSIS/index.html"><p style="color:blue;"><b>LSTM STOCK ANALYSIS learning and projects</b></p></a><br>
 
 **projects for stock market using WIND data API**
 <a href="https://www.windquant.com/qntcloud/article?10c3c19c-31cc-48a0-b0a9-fcfe40e1281a"><p style="color:blue;"><b>Personal-OLS-VaR practice</b></p></a></br>
