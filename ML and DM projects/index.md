@@ -29,4 +29,7 @@ practice after learning from the above: <br>
 
 <a href="/ML and DM projects/useful-function(R)"><p style="color:blue;"><b>some-useful functions(R)</b></p></a><br>
 <a href="/ML and DM projects/useful-function(python)"><p style="color:blue;"><b>some-useful functions(python)</b></p></a><br>
+<a href="/ML and DM projects/linear algreab zhangyu.pdf"><p style="color:blue;"><b>review linear algebra</b></p></a>
+
+<br>
 </p>
