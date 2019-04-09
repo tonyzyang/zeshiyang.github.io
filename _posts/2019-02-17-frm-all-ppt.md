@@ -22,3 +22,4 @@ nyc.shape</p>
 </blockquote>
 
 
+# \frac{\beta-\xi\cdot \mu}{1-\xi}
