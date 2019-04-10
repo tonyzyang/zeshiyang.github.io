@@ -22,7 +22,6 @@ nyc.shape</p>
 </blockquote>
 
 
-# $$ ES=\frac{V a R}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi}$$
 
-![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
+# ![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
 
