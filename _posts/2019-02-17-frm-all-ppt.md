@@ -22,7 +22,9 @@ nyc.shape</p>
 </blockquote>
 
 
-# $$ ES = \frac{V a R}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi}$$
+# $$
+\frac{V a R}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi}
+$$
 
 
 
