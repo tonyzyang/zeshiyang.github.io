@@ -34,5 +34,5 @@ N=number of obs<br>
 
 ##
 
-![](http://latex.codecogs.com/gif.latex?lognormal var = \\log N\\cdot V\\left(1-e^{\\mu-z_{0}\\cdot\\sigma}\\right))<br>
+![](http://latex.codecogs.com/gif.latex?\\log N\\cdot V\\left(1-e^{\\mu-z_{0}\\cdot\\sigma}\\right))<br>
 
