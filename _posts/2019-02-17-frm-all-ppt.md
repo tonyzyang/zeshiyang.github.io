@@ -34,5 +34,5 @@ N=number of obs<br>
 
 ##
 
-![](http://latex.codecogs.com/gif.latex?\log N\cdot V\left(1-e^{\mu-z_{0}\cdot\sigma}\right))<br>
+![](http://latex.codecogs.com/gif.latex?%5Clog%20N%5Ccdot%20V%5Cleft%281-e%5E%7B%5Cmu-z_%7B0%7D%5Ccdot%5Csigma%7D%5Cright%29)<br>
 
