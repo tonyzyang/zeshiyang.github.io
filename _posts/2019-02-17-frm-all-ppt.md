@@ -32,7 +32,24 @@ N=number of obs<br>
 ![](http://latex.codecogs.com/gif.latex?\\xi=\\text(shape(tailindex)))<br>
 ![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
 
-##
-
+##general var
+### lognormal:
 ![](http://latex.codecogs.com/gif.latex?%5Clog%20N%5Ccdot%20V%5Cleft%281-e%5E%7B%5Cmu-z_%7B0%7D%5Ccdot%5Csigma%7D%5Cright%29)<br>
+### normal
+![](http://latex.codecogs.com/gif.latex?V%20%5Ccdot%20z_%7B%5Calpha%7D%20%5Csigma)<br>
+
+# liquidity risk VaR
+## constant spread approach
+###
+![](http://latex.codecogs.com/gif.latex?%5Cmathrm%7BLVaR%7D%3D%5Cmathrm%7BV%7D%20%5Ctimes%5Cleft%5C%7B%5Cleft%5B1-%5Cexp%20%5Cleft%28%5Cmu-%5Csigma%20%5Ctimes%20%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5Cright%29%5Cright%5D&plus;%5Cleft%5B0.5%20%5Ctimes%5Cleft%28%5Cmu_%7B%5Cmathrm%7BS%7D%7D&plus;%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5E%7B%5Cprime%7D%20%5Ctimes%20%5Csigma_%7B%5Cmathrm%7BS%7D%7D%5Cright%29%5Cright%5D%5Cright%5C%7D
+)<br>
+
+
+
+
+
+
+
+
+
 
