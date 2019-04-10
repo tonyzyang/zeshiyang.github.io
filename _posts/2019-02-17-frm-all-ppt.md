@@ -5,7 +5,7 @@ author: Tony Z. Yang
 tags: [EXAM]
 date-string: Feberary 17, 2019
 ---
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 <center>
    <embed src="/images/frmL1-quantitive.pdf" width="800" height="600">
 </embed>
