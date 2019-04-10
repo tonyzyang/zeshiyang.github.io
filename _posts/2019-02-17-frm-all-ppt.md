@@ -32,4 +32,7 @@ N=number of obs<br>
 ![](http://latex.codecogs.com/gif.latex?\\xi=\\text(shape(tailindex)))<br>
 ![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
 
+##
+
+![](http://latex.codecogs.com/gif.latex?\\lognormal var = log N\\cdot V\\left(1-e^{\\mu-z_{0}\\cdot\\sigma}\\right))<br>
 
