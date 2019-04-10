@@ -23,7 +23,7 @@ nyc.shape</p>
 
 
 
-# 
+# var and ES for peaks over threholds approach
 ![](http://latex.codecogs.com/gif.latex?\\operatorname{VaR}=\\mathrm{u}+\\left(\\frac{\\beta}{\\xi}\\right)\\left\\{\\left[\\frac{\\mathrm{N}}{\\mathrm{n}}(1-Confidence_Level)\\right]^{-\\xi}-1\\right\\})<br>
 u=loss threshold<br>
 beta=scale<br>
