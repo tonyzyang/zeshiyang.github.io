@@ -24,5 +24,5 @@ nyc.shape</p>
 
 # $$ ES=\frac{V a R}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi}$$
 
-![](http://latex.codecogs.com/gif.latex?\\ES=frac{1}{1+sin(x)})
+![](http://latex.codecogs.com/gif.latex?ES=\frac{1}{1+sin(x)})
 
