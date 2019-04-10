@@ -40,11 +40,11 @@ N=number of obs<br>
 
 # liquidity risk VaR
 ## constant spread approach
-###
+### log noraml
 ![](http://latex.codecogs.com/gif.latex?%5Cmathrm%7BLVaR%7D%3D%5Cmathrm%7BV%7D%20%5Ctimes%5Cleft%5C%7B%5Cleft%5B1-%5Cexp%20%5Cleft%28%5Cmu-%5Csigma%20%5Ctimes%20%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5Cright%29%5Cright%5D&plus;%5Cleft%5B0.5%20%5Ctimes%5Cleft%28%5Cmu_%7B%5Cmathrm%7BS%7D%7D&plus;%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5E%7B%5Cprime%7D%20%5Ctimes%20%5Csigma_%7B%5Cmathrm%7BS%7D%7D%5Cright%29%5Cright%5D%5Cright%5C%7D
 )<br>
-
-
+### noraml
+![](http://latex.codecogs.com/gif.latex?%5Cmathrm%7BLVaR%7D%3D%5Cmathrm%7BVaR%7D&plus;0.5%20%5Ctimes%5Cleft%5B%5Cleft%28%5Cmu_%7B%5Cmathrm%7BS%7D%7D&plus;%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5E%7B%5Cprime%7D%20%5Ctimes%20%5Csigma_%7B%5Cmathrm%7Bs%7D%7D%5Cright%29%5Cright%5D%20%5Ctimes%20%5Cmathrm%7BV%7D)<br>
 
 
 
