@@ -29,7 +29,7 @@ u=loss threshold
 beta=scale
 n=number of obs exceed threshold
 N=number of obs
-![](http://latex.codecogs.com/gif.latex?\\xi=\\text(shape(tail index)))
+![](http://latex.codecogs.com/gif.latex?\\xi=\\text(shape(tailindex)))
 ![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
 
 
