@@ -23,8 +23,10 @@ nyc.shape</p>
 
 
 
-# ![](http://latex.codecogs.com/gif.latex?vaR=\mathrm{u}+\left(\frac{\beta}{\xi}\right)\left\{\left[\frac{\mathrm{N}}{\mathrm{n}}(1-c)\right]^{-\xi}-1\right\})
+# ![](http://latex.codecogs.com/gif.latex?vaR=u+\left(\frac{\beta}{\xi}\right)\left\{\left[\frac{\mathrm{N}}{\mathrm{n}}(1-c)\right]^{-\xi}-1\right\})
 
 ![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
 
 \mathrm{VaR}=\mathrm{u}+\left(\frac{\beta}{\xi}\right)\left\{\left[\frac{\mathrm{N}}{\mathrm{n}}(1-C)\right]^{-5}-1\right\}
+
+\operatorname{VaR}=\mathrm{u}+\left(\frac{\beta}{\xi}\right)\left\{\left[\frac{\mathrm{N}}{\mathrm{n}}(1-C)\right]^{-5}-1\right\}
