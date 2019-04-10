@@ -50,6 +50,9 @@ N=number of obs<br>
 
 ![](http://latex.codecogs.com/gif.latex?L%20C%3D0.5%20%5Ctimes%20V%20%5Ctimes%20%5Ctext%20%7B%20spread%20%7D)
 
+
+
+![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7BLVaR%7D%7D%7B%5Cmathrm%7BVaR%7D%7D%3D1&plus;%5Cfrac%7B%5Ctext%20%7B%20spread%20%7D%7D%7B2%20%5Ctimes%5Cleft%5B1-%5Cexp%20%5Cleft%28-%5Csigma%20%5Ctimes%20%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5Cright%29%5Cright%5D%7D)
 ## random spread approach
 ### log noraml
 ![](http://latex.codecogs.com/gif.latex?%5Cmathrm%7BLVaR%7D%3D%5Cmathrm%7BV%7D%20%5Ctimes%5Cleft%5C%7B%5Cleft%5B1-%5Cexp%20%5Cleft%28%5Cmu-%5Csigma%20%5Ctimes%20%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5Cright%29%5Cright%5D&plus;%5Cleft%5B0.5%20%5Ctimes%5Cleft%28%5Cmu_%7B%5Cmathrm%7BS%7D%7D&plus;%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5E%7B%5Cprime%7D%20%5Ctimes%20%5Csigma_%7B%5Cmathrm%7BS%7D%7D%5Cright%29%5Cright%5D%5Cright%5C%7D
@@ -58,7 +61,7 @@ N=number of obs<br>
 ![](http://latex.codecogs.com/gif.latex?%5Cmathrm%7BLVaR%7D%3D%5Cmathrm%7BVaR%7D&plus;0.5%20%5Ctimes%5Cleft%5B%5Cleft%28%5Cmu_%7B%5Cmathrm%7BS%7D%7D&plus;%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5E%7B%5Cprime%7D%20%5Ctimes%20%5Csigma_%7B%5Cmathrm%7Bs%7D%7D%5Cright%29%5Cright%5D%20%5Ctimes%20%5Cmathrm%7BV%7D)<br>
 
 
-
+![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7BLVaR%7D%7D%7B%5Cmathrm%7BVaR%7D%7D%3D1&plus;%5Cfrac%7B%5Cmathrm%7BLC%7D%7D%7B%5Cmathrm%7BVaR%7D%7D%3D1&plus;%5Cfrac%7B%5Cleft%28%5Cmu_%7B%5Cmathrm%7BS%7D%7D&plus;%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5E%7B%5Cprime%7D%20%5Ctimes%20%5Csigma_%7B%5Cmathrm%7BS%7D%7D%5Cright%29%7D%7B2%20%5Ctimes%5Cleft%5B1-%5Cexp%20%5Cleft%28-%5Csigma%20%5Ctimes%20%5Cmathrm%7Bz%7D_%7B%5Calpha%7D%5Cright%29%5Cright%5D%7D)
 
 
 
