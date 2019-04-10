@@ -24,5 +24,6 @@ nyc.shape</p>
 
 # $$\frac{V a R}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi}$$
 
-
+\(\frac{\beta-3 \cdot \mu}{1-\xi}\)
+\begin{equation}\frac{\beta-\xi \cdot \mu}{1-\xi}\end{equation}
 
