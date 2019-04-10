@@ -25,10 +25,10 @@ nyc.shape</p>
 
 # 
 ![](http://latex.codecogs.com/gif.latex?\\operatorname{VaR}=\\mathrm{u}+\\left(\\frac{\\beta}{\\xi}\\right)\\left\\{\\left[\\frac{\\mathrm{N}}{\\mathrm{n}}(1-Confidence_Level)\\right]^{-\\xi}-1\\right\\})
-u=loss threshold<\br>
-beta=scale<\br>
-n=number of obs exceed threshold<\br>
-N=number of obs<\br>
+u=loss threshold<br>
+beta=scale<br>
+n=number of obs exceed threshold<br>
+N=number of obs<br>
 ![](http://latex.codecogs.com/gif.latex?\\xi=\\text(shape(tailindex)))
 ![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
 
