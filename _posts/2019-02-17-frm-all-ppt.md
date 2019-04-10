@@ -32,7 +32,7 @@ N=number of obs<br>
 ![](http://latex.codecogs.com/gif.latex?\\xi=\\text(shape(tailindex)))<br>
 ![](http://latex.codecogs.com/gif.latex?ES=\frac{VaR}{1-\xi}+\frac{\beta-\xi\cdot\mu}{1-\xi})
 
-##general var
+## general var
 ### lognormal:
 ![](http://latex.codecogs.com/gif.latex?%5Clog%20N%5Ccdot%20V%5Cleft%281-e%5E%7B%5Cmu-z_%7B0%7D%5Ccdot%5Csigma%7D%5Cright%29)<br>
 ### normal
