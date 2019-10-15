@@ -22,4 +22,5 @@ title: About
    He has received his Master of Science in Applied Finance degree from Pepperdine University, from which he studied accounting, finance, & statistics and financial modeling.<br><br> 
 </p>    
    <a href="/images/Tony-zeshi Yang resume.pdf"> <p  style="color:blue;"><b>CV/Resume</b></p></a>
+   <a href="/images/杨泽世-pepperdine认证书.pdf"> <p  style="color:blue;"><b>杨泽世-pepperdine大学应用金融硕士认证书</b></p></a>
 
